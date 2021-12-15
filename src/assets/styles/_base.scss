@@ -29,4 +29,9 @@ button{
   border: none;
   outline: none;
   color: $white;
+  cursor: pointer
+}
+
+.ml-default{
+  margin-left: $marginSmall;
 }
