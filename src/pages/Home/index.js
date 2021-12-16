@@ -23,9 +23,9 @@ export default class Home extends React.Component {
 
     bindHandleScroll = (event) => {
         const  target  =  document.getElementById('target');
-        console.log('target', target)
+        console.log('target', target.getBoundingClientRect().top)
         const  clientRect  =  target.getBoundingClientRect();
-        console.log(clientRect);
+        // console.log(clientRect);
         // 滚动的高度
         const scrollTop = (event.srcElement ? event.srcElement.documentElement.scrollTop : false)
             || window.pageYOffset

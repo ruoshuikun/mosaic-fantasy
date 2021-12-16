@@ -2,11 +2,11 @@ import React from "react";
 import './index.scss'
 import Tree from '../../components/Tree/index.jsx';
 
-function Mosaic({item, index}) {
+function Mosaic({ item, index }) {
     return (
         <div key={index}>
             <div className="learn-more-content-title-level2" id={item.key}>{item.type}</div>
-            <img className='mb-default' src={item.img} alt="" width='154'/>
+            <img className='mb-default' src={item.img} alt="" width='154' />
             <div className="learn-more-content-title-level3">{item.name}</div>
             <div>
                 {
@@ -21,6 +21,7 @@ export default class LearnMore extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            hasVerticalScrolled: false,
             treeData: [
                 {
                     title: 'Welcome to MosaicFantasy',
@@ -194,13 +195,94 @@ export default class LearnMore extends React.Component {
         }
     }
 
+    //在componentDidMount，进行scroll事件的注册，绑定一个函数，让这个函数进行监听处理
+    componentDidMount() {
+        window.addEventListener('scroll', this.windowHandleScroll)
+        document.getElementById("learn-more-content").addEventListener('scroll', this.bindHandleScroll)
+    }
+
+    //在componentWillUnmount，进行scroll事件的注销
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.bindHandleScroll);
+    }
+
+    isInViewPortOfTwo(el) {
+        const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+        const top = el.getBoundingClientRect() && el.getBoundingClientRect().top
+        console.log('top', top)
+        return top <= viewPortHeight + 100
+    }
+
+    windowHandleScroll(event) {
+
+    }
+
+    bindHandleScroll = (event) => {
+        const menuDom = document.getElementById("learn-more-menu");
+        const menuDomChild = menuDom.children
+        var num = menuDom.offsetTop;
+        var a = menuDom.offsetHeight;
+
+        const contentDom = document.getElementById('learn-more-content')
+        let contentDomChild = contentDom.children
+        var scrollTop = contentDom.scrollTop;
+        // console.table({
+        //     scrollTop,
+        //     num
+        // })
+        // console.log('menuDomChild', menuDomChild);
+        // console.log('contentDomChild', contentDomChild);
+        if (scrollTop >= num) {
+            // menuDom.className = "nav fixed";
+            // menuDom.classList.add("aitest")
+            // contentDom.style.paddingTop = a +"px";
+        } else {
+            // menuDom.classList.remove("aitest")
+            // contentDom.style.paddingTop = "";
+        }
+
+        //当导航与相应文档接触的时候自动切换
+        //method1
+        for (var i = 0; i < menuDomChild.length; i++) {
+            console.log('menuDomChild', i);
+            console.log('contentDomChild[i]', contentDomChild[i]);
+            if (scrollTop + a >= contentDomChild[i].offsetTop) {
+                // console.log('???', i);
+
+                // for (var j = 0; j < menuDomChild.length; j++) {
+                //     // menuDom[j].className = "";
+                //     menuDomChild[i].classList.remove("aitest")
+
+                // }
+                // menuDom[i].className = "aitest";
+                menuDomChild[i].classList.add("aitest")
+            }
+        }
+        // console.log('scrollTop',scrollTop);
+        // console.log('navContainer', navContainer);
+        // const target = document.getElementById('target');
+        // console.log('target', target.getBoundingClientRect().top)
+        // const clientRect = target.getBoundingClientRect();
+        // // console.log(clientRect);
+        // // 滚动的高度
+        // const scrollTop = (event.srcElement ? event.srcElement.documentElement.scrollTop : false)
+        //     || window.pageYOffset
+        //     || (event.srcElement ? event.srcElement.body.scrollTop : 0);
+        // // console.info('event', event)
+        // // console.info('scrollTop', scrollTop)
+        // this.isInViewPort(event)
+        // this.setState({
+        //     hasVerticalScrolled: scrollTop > 10
+        // })
+    }
+
     render() {
         const tree = this.state.treeData
-        const {introductionMosaic} = this.state
+        const { introductionMosaic } = this.state
 
         return (
             <div className='learn-more'>
-                <div className='learn-more-menu'>
+                <div className='learn-more-menu' id='learn-more-menu'>
                     <Tree
                         treeData={tree}
                         onSelect={() => this.onSelect()}
@@ -284,31 +366,31 @@ export default class LearnMore extends React.Component {
                                         the corresponding wallet version according to your device.
                                     </div>
                                     <img className='learn-more-content-desc-step-img' width='846'
-                                         src={require('../../assets/img/learn-more/step1.png')} alt=""/>
+                                        src={require('../../assets/img/learn-more/step1.png')} alt="" />
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step2: </span>
                                         <span>With TP Wallet on your smartphone, click to open and create a wallet. As a new beginner without Wallet, please choose "No Wallet" and choose the blockchain network you would like to create. As MF is based on BSC , you need to choose BSC network to “Create Wallet”.</span>
                                     </div>
                                     <img className='learn-more-content-desc-step-img' width='846'
-                                         src={require('../../assets/img/learn-more/step2.png')} alt=""/>
+                                        src={require('../../assets/img/learn-more/step2.png')} alt="" />
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step3: </span>
                                         <span>Set your BSC wallet name and password, and then tick “Terms of Service and Privacy”, click [Create Wallet] to proceed.</span>
                                     </div>
                                     <img className='learn-more-content-desc-step-img' width='846'
-                                         src={require('../../assets/img/learn-more/step3.png')} alt=""/>
+                                        src={require('../../assets/img/learn-more/step3.png')} alt="" />
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step4: </span>
                                         <span>Backup Mnemonic. In addition to the password, the mnemonic phrase is an important tool for restoring the wallet and must be backed up. Please do not take screenshots to keep your assets saft and then click “I get it”. Backup your mnemonic and keep it in a safe place, read [Attention] carefully, click “Completed Backup, Verify it”.</span>
                                     </div>
                                     <img className='learn-more-content-desc-step-img' width='846'
-                                         src={require('../../assets/img/learn-more/step4.png')} alt=""/>
+                                        src={require('../../assets/img/learn-more/step4.png')} alt="" />
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step5: </span>
                                         <span>Fill in mnemonic words in order according to the words you copied, and then click “Confirm”. And you will you've created a wallet with BSC address successfully!</span>
                                     </div>
                                     <img className='learn-more-content-desc-step-img' width='846'
-                                         src={require('../../assets/img/learn-more/step5.png')} alt=""/>
+                                        src={require('../../assets/img/learn-more/step5.png')} alt="" />
                                     <div>Click on the "+" sign in the upper right corner to display the token assets you
                                         want to display through the Token contract search.
                                     </div>
@@ -328,15 +410,15 @@ export default class LearnMore extends React.Component {
                                         <span>Download and install MetaMask (URL: https://metamask.io/download.html). After the installation, the fox logo will appear on the upper right corner of the browser. Give a click and hen you can import your wallet or create a new wallet.</span>
                                     </div>
                                     <img className='learn-more-content-desc-step-img' width='846'
-                                         src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step1.png')}
-                                         alt=""/>
+                                        src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step1.png')}
+                                        alt="" />
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step2: </span>
                                         <span>Add the BSC chain As there is no BSC chain listed on MetaMask by default, you need to add it manually. Click on the blockchain network at the top of the MetaMask interface, and then select custom RPC.</span>
                                     </div>
                                     <img className='learn-more-content-desc-step-img' width='846'
-                                         src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step2.png')}
-                                         alt=""/>
+                                        src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step2.png')}
+                                        alt="" />
                                     <div>
                                         <div>Fill in the following information one by one, and click save:</div>
                                         <div>Network：Binance Smartchain</div>
@@ -346,8 +428,8 @@ export default class LearnMore extends React.Component {
                                         <div>URL：https://www.bscscan.com/</div>
                                     </div>
                                     <img className='learn-more-content-desc-step-img' width='846'
-                                         src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step3.png')}
-                                         alt=""/>
+                                        src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step3.png')}
+                                        alt="" />
                                     <div>Later, you can see that there is an extra option for Binance Smartchain. You
                                         can import your existing BSC account private key into MetaMask.
                                     </div>
@@ -535,7 +617,7 @@ export default class LearnMore extends React.Component {
                                 element attribute for example.
                             </p>
                             {
-                                introductionMosaic.map((item, index) => Mosaic({item, index}))
+                                introductionMosaic.map((item, index) => Mosaic({ item, index }))
                             }
                         </div>
                         <div className="learn-more-content-title-level2" id='2-0-3'>Gameplay</div>
@@ -566,14 +648,14 @@ export default class LearnMore extends React.Component {
                             700,000,000
                         </div>
                         <img className='mb-default' src={require('../../assets/img/learn-more/What’s-$LKK-1.png')}
-                             width='846' alt=""/>
+                            width='846' alt="" />
                         <img className='mb-default' src={require('../../assets/img/learn-more/What’s-$LKK-2.png')}
-                             width='846' alt=""/>
+                            width='846' alt="" />
                         <div className="learn-more-content-title-level3">Total Supply: Initial 1000,000,000 to
                             Eventual
                         </div>
                         <img className='mb-default' src={require('../../assets/img/learn-more/What’s-$LKK-3.png')}
-                             width='846' alt=""/>
+                            width='846' alt="" />
                         <div className="learn-more-content-title-level2" id='3-0-1'>What’s $BLP</div>
                         <div className='learn-more-content-desc'>
                             <p>
@@ -587,7 +669,7 @@ export default class LearnMore extends React.Component {
                             </p>
                         </div>
                         <img className='mb-default' src={require('../../assets/img/learn-more/What’s-$BLP-1.png')}
-                             width='846' alt=""/>
+                            width='846' alt="" />
                         <div className='learn-more-content-desc'>
                             <p>
                                 $BLP can only be unlocked and used immediately when players hold enough $BLP equal with
