@@ -52,7 +52,7 @@ export default class LearnMore extends React.Component {
                         {
                             title: 'Introduction of Mosaic',
                             key: '2-0-2',
-                            children:[
+                            children: [
                                 {
                                     title: 'Ocean Mosaic',
                                     key: '2-0-2-0',
@@ -63,24 +63,54 @@ export default class LearnMore extends React.Component {
                                 },
                                 {
                                     title: 'Flame Mosaic',
-                                    key: '2-0-2-2',
-                                },
-                                {
-                                    title: 'Dawn Mosaic',
                                     key: '2-0-2-3',
                                 },
                                 {
-                                    title: 'Nether Mosaic',
+                                    title: 'Dawn Mosaic',
                                     key: '2-0-2-4',
+                                },
+                                {
+                                    title: 'Nether Mosaic',
+                                    key: '2-0-2-5',
                                 },
                             ]
                         },
                         {
                             title: 'Gameplay',
-                            key: '2-0-2',
+                            key: '2-0-3',
                         },
                     ],
                 },
+                {
+                    title: 'Token Economy',
+                    key: '3-0',
+                    children: [
+                        {
+                            title: 'What’s $LKK',
+                            key: '3-0-0',
+                        },
+                        {
+                            title: 'What’s $BLP',
+                            key: '3-0-1',
+                        },
+                        {
+                            title: 'Deflation Model',
+                            key: '3-0-2',
+                        },
+                    ]
+                },
+                {
+                    title: 'Ecological Strategy',
+                    key: '4-0',
+                },
+                {
+                    title: 'Contact Us',
+                    key: '5-0',
+                },
+                {
+                    title: 'Audit',
+                    key: '6-0',
+                }
             ]
         }
     }
