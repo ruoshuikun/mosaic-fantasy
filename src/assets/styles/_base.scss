@@ -31,7 +31,14 @@ button{
   color: $white;
   cursor: pointer
 }
-
+// 外边距
 .ml-default{
   margin-left: $marginSmall;
+}
+.mb-default{
+  margin-bottom: $marginSmall;
+}
+
+.link{
+  color: $link;
 }
