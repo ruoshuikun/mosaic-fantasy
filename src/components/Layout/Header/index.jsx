@@ -11,8 +11,6 @@ class Nav extends React.Component {
     }
 
     jump({item, index}) {
-        console.log('jump', item)
-        console.log('index', index)
         this.setState({
             isActive: index
         })

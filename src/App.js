@@ -1,11 +1,11 @@
-import {BrowserRouter, Route, Link} from 'react-router-dom'
+import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import Header from './components/Layout/Header'
 import Home from './pages/Home'
 import LearnMore from './pages/LearnMore'
 
 function App() {
     return (
-        <BrowserRouter>
+        <Router>
             <div className="App">
                 <Header/>
                 <div className='main'>
@@ -13,7 +13,7 @@ function App() {
                     <Route path="/learn-more" component={LearnMore}/>
                 </div>
             </div>
-        </BrowserRouter>
+        </Router>
     );
 }
 

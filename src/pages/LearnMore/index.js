@@ -229,7 +229,7 @@ export default class LearnMore extends React.Component {
                     <Tree
                         treeData={tree}
                         onSelect={() => this.onSelect()}
-                        defaultExpandedKeys={['0-0-0']}
+                        defaultExpandedKeys={[]}
                     />
                 </div>
                 <div>
