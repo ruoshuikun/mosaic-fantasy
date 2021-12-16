@@ -2,16 +2,6 @@ import React from "react";
 import './index.scss'
 import Tree from '../../components/Tree/index.jsx';
 
-function contentDefault(val) {
-    console.log('val', val)
-    return (
-        <div className='learn-more-content'>
-            <div className="learn-more-content-title">title</div>
-            <div className='learn-more-content-desc'>desc</div>
-        </div>
-    )
-}
-
 function Mosaic({item, index}) {
     return (
         <div key={index}>
@@ -650,21 +640,6 @@ export default class LearnMore extends React.Component {
                         </div>
                     </div>
                 </div>
-                {/*<div>*/}
-                {/*    {*/}
-                {/*        tree.map(item => {*/}
-                {/*            const {type, content} = item*/}
-                {/*            switch (type) {*/}
-                {/*                case 'test':*/}
-                {/*                    break;*/}
-                {/*                default:*/}
-                {/*                    console.info('item', item)*/}
-                {/*                    contentDefault(content)*/}
-                {/*                    break;*/}
-                {/*            }*/}
-                {/*        })*/}
-                {/*    }*/}
-                {/*</div>*/}
             </div>
         )
     }

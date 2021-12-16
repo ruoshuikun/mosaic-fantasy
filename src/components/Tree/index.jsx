@@ -98,7 +98,7 @@ class Tree extends React.Component {
             // 找到锚点
             let anchorElement = document.getElementById(anchorName);
             // 如果对应id的锚点存在，就跳转到锚点
-            //scrollIntoView让页面滚动到对应可视化区域内
+            // scrollIntoView让页面滚动到对应可视化区域内
             if(anchorElement) {
                 anchorElement.scrollIntoView({block: 'start', behavior: 'smooth'});
             }
@@ -121,14 +121,6 @@ class Tree extends React.Component {
                                 />
                                 : null
                         }
-                        {/*<div className="cm-flex-1 cm-hover-bc-eee cm-p-01" onClick={(e)=>this.onSelect(e,item)}>{item.title}</div>*/}
-                        {/*{*/}
-                        {/*    item.children?*/}
-                        {/*        <div onClick={(e)=>this.onTrigger1(e,item)} className="cm-ml-01 cm-p-005">*/}
-                        {/*            <img src={item.isOpenChild?arrowUpGray:arrowDownGray}*/}
-                        {/*                 className="tree-arrow" alt="" />*/}
-                        {/*        </div> :null*/}
-                        {/*}*/}
                     </div>
                 }
                 {

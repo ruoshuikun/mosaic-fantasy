@@ -1,3 +1,5 @@
+@import "src/assets/styles/index";
+
 .tree{
   &-wrap{
     width: 100%;
@@ -11,5 +13,9 @@
   }
   &-arrow{
     width: 25px;
+  }
+  &-active{
+    color: $black !important;
+    font-weight: bold;
   }
 }
