@@ -23,6 +23,15 @@ class Tree extends React.Component {
                         item.isOpenChild = true;//展开子节点
                     }
                 });
+            } else {
+                treeData.map((item) => {
+                    item.isOpenChild = true;//展开子节点
+                    if(item.children){
+                        item.children.map(childrenItem => {
+                            childrenItem.isOpenChild = true;//展开子节点
+                        })
+                    }
+                });
             }
         }
         //处理自定义样式
