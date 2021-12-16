@@ -15,7 +15,7 @@ function contentDefault(val) {
 function Mosaic({item, index}) {
     return (
         <div key={index}>
-            <div className="learn-more-content-title-level2">{item.type}</div>
+            <div className="learn-more-content-title-level2" id={item.key}>{item.type}</div>
             <img className='mb-default' src={item.img} alt="" width='154'/>
             <div className="learn-more-content-title-level3">{item.name}</div>
             <div>
@@ -36,12 +36,6 @@ export default class LearnMore extends React.Component {
                     title: 'Welcome to MosaicFantasy',
                     key: '0-0',
                     type: 'default',
-                    content: [
-                        {
-                            title: '',
-                            value: 'MF (MosaicFantasy) is a massive blockchain game based on BSC (Binance Smart Chain) which allows the gamers to “Play to earn”. With self-operating ecological economy, MF creates an independent and sophisticated virtual world in which lives various fantastic creatures holding superpower-Mosaic. In this amazing world, players are able to obtain, upgrade and synthetize different kinds of Mosaic by taking part in the adventure, battles and other ecological contribution. Besides, players can earn relevant cryptocurrency and MF tokens as well. MF(MosaicFantasy)will bring spectacular experience for gamers with high quality game making, grand background and multiple “Play to Earn” methods. With “Play to Earn” leading the new trend of game industry, MF(MosaicFantasy)shall break the block between the reality and virtuality and becomes the second space for human working, entertainment and social life in the future!'
-                        }
-                    ],
                 },
                 {
                     title: 'About MosaicFantasy Platform',
@@ -51,20 +45,6 @@ export default class LearnMore extends React.Component {
                         {
                             title: 'Blockchain Basis',
                             key: '1-0-0',
-                            content: [
-                                {
-                                    title: 'DeFi (Decentralized Finance)',
-                                    value: 'DeFi is a system by which financial products become available on a public decentralized blockchain network. That makes them open to anyone to use, rather than traditional centralized finance like banks or brokerages. With a system by which software written on blockchains, DeFi makes it possible for buyers, sellers, lenders, and borrowers to interact peer to peer or with a strictly software-based middleman rather than a company or institution facilitating a transaction and improving the existing financial system.'
-                                },
-                                {
-                                    title: 'NFT (Non-Fungible Token)',
-                                    value: 'NFT (Non-Fungible Token) are cryptographic assets on blockchain with unique identification codes and metadata that distinguish them from each other. Unlike Fungible Tokens such as BTC and ETH which are identical to each other, NFT is unique in its identification and indivisible with minimum unit 1. Therefore, non-fungible, unique and inalterable characteristics of NFT make it become the perfect medium for commercial transactions, especially in digital art and games.'
-                                },
-                                {
-                                    title: 'GameFi',
-                                    value: 'GameFi is Game+DeFi, which is a mode of integration of Game and Finance, presenting decentralized financial products through games. It triggers the new model of “Play to earn” other than “Play to win”. In other words, players can not only win equipment or tools in the game, but in turn, those equipment or tools are also digital assets measured by NFT which can be traded for fiat money and spend in real life. GameFi makes the game both enjoyable and profitable for players.'
-                                }
-                            ],
                         },
                         {
                             title: 'Wallet Guideline',
@@ -162,6 +142,7 @@ export default class LearnMore extends React.Component {
             introductionMosaic: [
                 {
                     type: 'Ocean Mosaic',
+                    key: '2-0-2-0',
                     img: require('../../assets/img/learn-more/mosaic/Zeklahm.png'),
                     name: 'Zeklahm',
                     skill: [
@@ -173,6 +154,7 @@ export default class LearnMore extends React.Component {
                 },
                 {
                     type: 'Storm Mosaic',
+                    key: '2-0-2-1',
                     img: require('../../assets/img/learn-more/mosaic/Sphinx.png'),
                     name: 'Sphinx',
                     skill: [
@@ -184,6 +166,7 @@ export default class LearnMore extends React.Component {
                 },
                 {
                     type: 'Flame Mosaic',
+                    key: '2-0-2-3',
                     img: require('../../assets/img/learn-more/mosaic/Radon.png'),
                     name: 'Radon',
                     skill: [
@@ -195,6 +178,7 @@ export default class LearnMore extends React.Component {
                 },
                 {
                     type: 'Dawn Mosaic',
+                    key: '2-0-2-4',
                     img: require('../../assets/img/learn-more/mosaic/Titan.png'),
                     name: 'Titan',
                     skill: [
@@ -206,6 +190,7 @@ export default class LearnMore extends React.Component {
                 },
                 {
                     type: 'Nether Mosaic',
+                    key: '2-0-2-5',
                     img: require('../../assets/img/learn-more/mosaic/Typhon.png'),
                     name: 'Typhon',
                     skill: [
@@ -232,8 +217,8 @@ export default class LearnMore extends React.Component {
                         defaultExpandedKeys={[]}
                     />
                 </div>
-                <div>
-                    <div className='learn-more-content'>
+                <div id='test123'>
+                    <div className='learn-more-content' id='0-0'>
                         <div className="learn-more-content-title-level1">Welcome to MosaicFantasy</div>
                         <div className='learn-more-content-desc'>
                             MF (MosaicFantasy) is a massive blockchain game based
@@ -251,9 +236,9 @@ export default class LearnMore extends React.Component {
                         </div>
                     </div>
                     <div className='learn-more-content'>
-                        <div className="learn-more-content-title-level1">About MosaicFantasy Platform</div>
+                        <div className="learn-more-content-title-level1" id='1-0'>About MosaicFantasy Platform</div>
                         <div>
-                            <div className="learn-more-content-title-level2">Blockchain Basis</div>
+                            <div className="learn-more-content-title-level2" id='1-0-0'>Blockchain Basis</div>
                             <div>
                                 <div className="learn-more-content-title-level3">DeFi (Decentralized Finance)</div>
                                 <div className='learn-more-content-desc'>DeFi is a system by which financial products
@@ -290,7 +275,7 @@ export default class LearnMore extends React.Component {
                         </div>
                     </div>
                     <div className='learn-more-content'>
-                        <div className="learn-more-content-title-level2">Wallet Guideline</div>
+                        <div className="learn-more-content-title-level2" id='1-0-1'>Wallet Guideline</div>
                         <div className='learn-more-content-desc'>MosaicFantasy is a project based on BSC chain, so
                             players need to create a BSC address. At present, there are many wallets on the market that
                             support BSC chain. Take Token Pocket (TP) and MetaMask for example.
@@ -383,7 +368,7 @@ export default class LearnMore extends React.Component {
                     </div>
 
                     <div className='learn-more-content'>
-                        <div className="learn-more-content-title-level2">What’s Mosaic NFT?</div>
+                        <div className="learn-more-content-title-level2" id='1-0-2'>What’s Mosaic NFT?</div>
                         <div className='learn-more-content-desc'>
                             <p>
                                 MF(MosaicFantasy) creates a digital creature world
@@ -403,7 +388,7 @@ export default class LearnMore extends React.Component {
                         </div>
                     </div>
                     <div className='learn-more-content'>
-                        <div className="learn-more-content-title-level2">How to get Mosaic NFT?</div>
+                        <div className="learn-more-content-title-level2" id='1-0-3'>How to get Mosaic NFT?</div>
                         <div className='learn-more-content-desc'>
                             <p>
                                 MosaicNFT market has been launched. Players can buy Mosaic NFT through the MosaicNFT
@@ -454,7 +439,7 @@ export default class LearnMore extends React.Component {
                     </div>
 
                     <div className='learn-more-content'>
-                        <div className="learn-more-content-title-level2">What’s mining power?</div>
+                        <div className="learn-more-content-title-level2" id='1-0-4'>What’s mining power?</div>
                         <div className="learn-more-content-title-level3">Introduction of mining power</div>
                         <div className='learn-more-content-desc'>
                             Consensus mechanism is essential component of Blockchain to establish trust and
@@ -480,8 +465,8 @@ export default class LearnMore extends React.Component {
                     </div>
 
                     <div className='learn-more-content'>
-                        <div className="learn-more-content-title-level1">About MosaicFantasy Game</div>
-                        <div className="learn-more-content-title-level2">Entering the game</div>
+                        <div className="learn-more-content-title-level1" id='2-0'>About MosaicFantasy Game</div>
+                        <div className="learn-more-content-title-level2" id='2-0-0'>Entering the game</div>
                         <div className='learn-more-content-desc'>
                             <p>
                                 Players need at least 1 KingKongwill to enter the game and take PVE or PVP adventures
@@ -522,7 +507,7 @@ export default class LearnMore extends React.Component {
                                 game.
                             </p>
                         </div>
-                        <div className="learn-more-content-title-level2">Background</div>
+                        <div className="learn-more-content-title-level2" id='2-0-1'>Background</div>
                         <div className='learn-more-content-desc'>
                             <p>
                                 In the world of MosaicFantasy, there lives Mosaic and human race together. As a trainer,
@@ -552,7 +537,7 @@ export default class LearnMore extends React.Component {
                                 control fire and so on.
                             </p>
                         </div>
-                        <div className="learn-more-content-title-level2">Introduction of Mosaic</div>
+                        <div className="learn-more-content-title-level2" id='2-0-2'>Introduction of Mosaic</div>
                         <div className='learn-more-content-desc'>
                             <p>
                                 There are 5 element attributes for Mosaic, including ocean, storm, flame, dawn and
@@ -563,7 +548,7 @@ export default class LearnMore extends React.Component {
                                 introductionMosaic.map((item, index) => Mosaic({item, index}))
                             }
                         </div>
-                        <div className="learn-more-content-title-level2">Gameplay</div>
+                        <div className="learn-more-content-title-level2" id='2-0-3'>Gameplay</div>
                         <div className='learn-more-content-desc'>
                             <p>
                                 Once entering the world of Mosaic, players need sufficient courage to challenge unknown
@@ -578,8 +563,8 @@ export default class LearnMore extends React.Component {
                         </div>
                     </div>
                     <div className='learn-more-content'>
-                        <div className="learn-more-content-title-level1">Token Economy</div>
-                        <div className="learn-more-content-title-level2">What’s $LKK</div>
+                        <div className="learn-more-content-title-level1" id='3-0'>Token Economy</div>
+                        <div className="learn-more-content-title-level2" id='3-0-0'>What’s $LKK</div>
                         <div className='learn-more-content-desc'>
                             <p>
                                 SLKK is the BEP-20 Governance Token for the MosaicFantasy world. The $LKK holders have
@@ -599,7 +584,7 @@ export default class LearnMore extends React.Component {
                         </div>
                         <img className='mb-default' src={require('../../assets/img/learn-more/What’s-$LKK-3.png')}
                              width='846' alt=""/>
-                        <div className="learn-more-content-title-level2">What’s $BLP</div>
+                        <div className="learn-more-content-title-level2" id='3-0-1'>What’s $BLP</div>
                         <div className='learn-more-content-desc'>
                             <p>
                                 $BLP (Blue Lucky potion) is the game token in the MF (MosaicFantasy) world. Players can
@@ -620,7 +605,7 @@ export default class LearnMore extends React.Component {
                                 liquidity is applied in $ BLP/BUSD.
                             </p>
                         </div>
-                        <div className="learn-more-content-title-level2">Deflation Model</div>
+                        <div className="learn-more-content-title-level2" id='3-0-2'>Deflation Model</div>
                         <div className='learn-more-content-desc'>
                             <p>
                                 In the era of Web 3.0, we believe in decentralized governance. The code is law. After
@@ -634,7 +619,7 @@ export default class LearnMore extends React.Component {
                     </div>
 
                     <div className='learn-more-content'>
-                        <div className="learn-more-content-title-level1">Ecological Strategy</div>
+                        <div className="learn-more-content-title-level1" id='4-0'>Ecological Strategy</div>
                         <div className="learn-more-content-desc">
                             <p>
                                 MF (MosaicFantasy) will be online at January 10th,2020. And the LKK public blockchain
@@ -648,7 +633,7 @@ export default class LearnMore extends React.Component {
                         </div>
                     </div>
                     <div className='learn-more-content'>
-                        <div className="learn-more-content-title-level1">Contact Us</div>
+                        <div className="learn-more-content-title-level1" id='5-0'>Contact Us</div>
                         <div className="learn-more-content-desc">
                             <p>
                                 <b>Website: </b>
@@ -657,7 +642,7 @@ export default class LearnMore extends React.Component {
                         </div>
                     </div>
                     <div className='learn-more-content'>
-                        <div className="learn-more-content-title-level1">Audit</div>
+                        <div className="learn-more-content-title-level1" id='6-0'>Audit</div>
                         <div className="learn-more-content-desc">
                             <p>
                                 Manwu has completed the audit of the MosaicFantasy contract.

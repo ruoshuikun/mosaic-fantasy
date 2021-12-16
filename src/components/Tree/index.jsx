@@ -26,7 +26,7 @@ class Tree extends React.Component {
             } else {
                 treeData.map((item) => {
                     item.isOpenChild = true;//展开子节点
-                    if(item.children){
+                    if (item.children) {
                         item.children.map(childrenItem => {
                             childrenItem.isOpenChild = true;//展开子节点
                         })
@@ -84,6 +84,7 @@ class Tree extends React.Component {
     }
 
     onTrigger1(e, item) {
+
         e.stopPropagation();
         item.isOpenChild = !item.isOpenChild;
         this.setState({
@@ -91,18 +92,32 @@ class Tree extends React.Component {
         })
     }
 
+    scrollToAnchor = (anchorName) => {
+        //通过id anchorname是传来的id
+        if (anchorName) {
+            // 找到锚点
+            let anchorElement = document.getElementById(anchorName);
+            // 如果对应id的锚点存在，就跳转到锚点
+            //scrollIntoView让页面滚动到对应可视化区域内
+            if(anchorElement) {
+                anchorElement.scrollIntoView({block: 'start', behavior: 'smooth'});
+            }
+        }
+    }
+
     loopTree(arr) {
         return arr.map((item, index) => {
             return <div key={index} className='tree-wrap'>
                 {
-                    <div className="tree-title" onClick={(e) => this.onTrigger1(e, item)}>
-                        <span>{item.title}</span>
+                    <div className="tree-title">
+                        <span onClick={() => this.scrollToAnchor(item.key)}>{item.title}</span>
                         {
                             item.children
                                 ?
                                 <img
                                     src={item.isOpenChild ? arrowUpGray : arrowDownGray}
                                     className="tree-arrow" alt=""
+                                    onClick={(e) => this.onTrigger1(e, item)}
                                 />
                                 : null
                         }
