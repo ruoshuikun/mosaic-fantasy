@@ -24,16 +24,28 @@ class Nav extends React.Component {
                 path: '/home'
             },
             {
-                name: 'Play Now',
-                path: '/play-now'
+                name: 'Market',
+                path: '/market'
             },
             {
-                name: 'Farm',
-                path: '/farm'
+                name: 'Assets',
+                path: '/assets'
             },
             {
-                name: 'Help Center',
-                path: '/help-center'
+                name: 'MF Mining',
+                path: '/mf-mining'
+            },
+            {
+                name: 'Whitebook',
+                path: '/whitebook'
+            },
+            {
+                name: 'Help',
+                path: '/help'
+            },
+            {
+                name: 'My Wallet',
+                path: '/my-wallet'
             },
             {
                 name: 'Learn More',

@@ -207,7 +207,7 @@ export default class LearnMore extends React.Component {
                         defaultExpandedKeys={[]}
                     />
                 </div>
-                <div id='test123'>
+                <div id='learn-more-content'>
                     <div className='learn-more-content' id='0-0'>
                         <div className="learn-more-content-title-level1">Welcome to MosaicFantasy</div>
                         <div className='learn-more-content-desc'>

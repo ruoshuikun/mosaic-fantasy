@@ -16,7 +16,7 @@ code {
 
 .main{
   width: 1200px;
-  height: auto;
+  height: calc( 100vh - 160px);
   margin: auto;
   padding: 30px;
 }
