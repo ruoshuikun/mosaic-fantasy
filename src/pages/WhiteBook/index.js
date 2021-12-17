@@ -17,7 +17,7 @@ function Mosaic({ item, index }) {
     )
 }
 
-export default class LearnMore extends React.Component {
+export default class WhiteBook extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

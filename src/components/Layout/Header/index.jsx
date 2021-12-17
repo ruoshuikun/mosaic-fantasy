@@ -37,7 +37,7 @@ class Nav extends React.Component {
             },
             {
                 name: 'Whitebook',
-                path: '/whitebook'
+                path: '/white-book'
             },
             {
                 name: 'Help',
@@ -47,10 +47,10 @@ class Nav extends React.Component {
                 name: 'My Wallet',
                 path: '/my-wallet'
             },
-            {
-                name: 'Learn More',
-                path: '/learn-more'
-            },
+            // {
+            //     name: 'Learn More',
+            //     path: '/learn-more'
+            // },
         ]
         return (
             <nav>

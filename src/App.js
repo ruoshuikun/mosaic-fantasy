@@ -1,7 +1,7 @@
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
 import Header from './components/Layout/Header'
 import Home from './pages/Home'
-import LearnMore from './pages/LearnMore'
+import WhiteBook from './pages/WhiteBook'
 
 function App() {
     return (
@@ -10,7 +10,7 @@ function App() {
                 <Header/>
                 <div className='main'>
                     <Route path="/home" component={Home}/>
-                    <Route path="/learn-more" component={LearnMore}/>
+                    <Route path="/white-book" component={WhiteBook}/>
                 </div>
             </div>
         </Router>
