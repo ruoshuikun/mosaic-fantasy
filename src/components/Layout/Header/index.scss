@@ -1,9 +1,12 @@
 @import "src/assets/styles/index";
 
 .header {
+  width: 100vw;
   height: 100px;
-  background: $black;
+  //background: $black;
   color: $white;
+  position: fixed;
+  z-index: 999;
 
   &-main {
     width: 1200px;

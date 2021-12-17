@@ -1,4 +1,173 @@
-.header-container{
+@import "../../assets/styles/variables";
+
+.header-container {
   background: red;
   height: 100vh;
+}
+
+// --
+.home {
+  //height: 300vh;
+  //background: red;
+  width: 1200px;
+  height: auto;
+  margin: auto;
+  padding-top: 138px;
+
+
+  &-wrap {
+    $homeWrapHeight: 4144px;
+    //$homeWrapHeight: calc(100vw * 2.25);
+    //position: fixed;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    //z-index: 1;
+    width: 100vw;
+    //height: calc(100vw * 2.25);
+    height: $homeWrapHeight;
+    background-image: url("../../assets/img/home-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100vw $homeWrapHeight;
+
+    overflow-y: auto;
+    overflow-x: unset;
+  }
+
+  &-role {
+    width: 1200px;
+    height: calc(1200px / 2.32);
+  }
+
+  &-about-mosaic-fantasy {
+    width: 1178px;
+    margin: 74px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    > img {
+      width: 872px;
+      //margin-bottom: 51px;
+      margin: auto auto 51px;
+    }
+
+    text-align: justify;
+    line-height: 30px;
+    font-size: 24px;
+    color: $white;
+
+    &-mosaic {
+      margin-bottom: 38px;
+    }
+  }
+
+  &-content {
+    &-title {
+      width: 100%;
+      margin-top: 312px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+
+      &-game-play {
+        width: 610px;
+      }
+
+      &-play-earn {
+        width: 650px;
+      }
+    }
+
+    &-role {
+      margin-left: 45px;
+
+      &-title {
+        font: {
+          size: 36px;
+          weight: bold;
+        }
+        color: $gray-2;
+        margin-top: 47px;
+        margin-bottom: 29px;
+
+      }
+
+      &-desc {
+        width: 500px;
+        color: $gray-2;
+      }
+
+      &-img {
+        width: 507px;
+        height: 509px;
+      }
+
+      &-wrap {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &-pie {
+      //margin-top: 103px;
+      height: 586px;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+
+      &-img {
+        width: 631px;
+        height: 586px;
+        position: absolute;
+        top: -70px;
+        left: 0;
+      }
+    }
+  }
+
+  &-footer {
+    height: 405px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+
+    &-img {
+      margin-bottom: 32px;
+    }
+
+    &-copyright{
+      margin-top: 10px;
+    }
+
+    &-waistline{
+      position: absolute;
+      width: 100vw;
+      top: 0;
+      border-top: 1px solid $gray-700;
+    }
+  }
+}
+
+
+.part-ners {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &-img {
+    margin: 204px auto 102px;
+    width: 526px;
+    height: 145px;
+
+    &-item {
+      width: 1200px;
+      margin-bottom: 68px;
+    }
+  }
 }
