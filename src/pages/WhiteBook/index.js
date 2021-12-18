@@ -417,13 +417,13 @@ export default class WhiteBook extends React.Component {
                                         <span className='learn-more-content-desc-step'>Step4: </span>
                                         <span>Backup Mnemonic. In addition to the password, the mnemonic phrase is an important tool for restoring the wallet and must be backed up. Please do not take screenshots to keep your assets saft and then click “I get it”. Backup your mnemonic and keep it in a safe place, read [Attention] carefully, click “Completed Backup, Verify it”.</span>
                                     </div>
-                                    <img className='learn-more-content-desc-step-img' width='846' height='456'
+                                    <img className='learn-more-content-desc-step-img' width='846' height='716'
                                          src={require('../../assets/img/learn-more/step4.png')} alt=""/>
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step5: </span>
                                         <span>Fill in mnemonic words in order according to the words you copied, and then click “Confirm”. And you will you've created a wallet with BSC address successfully!</span>
                                     </div>
-                                    <img className='learn-more-content-desc-step-img' width='846' height='456'
+                                    <img className='learn-more-content-desc-step-img' width='846' height='566'
                                          src={require('../../assets/img/learn-more/step5.png')} alt=""/>
                                     <div>Click on the "+" sign in the upper right corner to display the token assets you
                                         want to display through the Token contract search.
@@ -444,14 +444,14 @@ export default class WhiteBook extends React.Component {
                                         <span>Download and install MetaMask (URL: <a
                                             href="https://www.tokenpocket.pro/zh/download/app">https://metamask.io/download.html</a>). After the installation, the fox logo will appear on the upper right corner of the browser. Give a click and hen you can import your wallet or create a new wallet.</span>
                                     </div>
-                                    <img className='learn-more-content-desc-step-img' width='846' height='456'
+                                    <img className='learn-more-content-desc-step-img' width='846' height='386'
                                          src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step1.png')}
                                          alt=""/>
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step2: </span>
                                         <span>Add the BSC chain<br/> As there is no BSC chain listed on MetaMask by default, you need to add it manually. Click on the blockchain network at the top of the MetaMask interface, and then select custom RPC.</span>
                                     </div>
-                                    <img className='learn-more-content-desc-step-img' width='846' height='456'
+                                    <img className='learn-more-content-desc-step-img' width='846' height='516'
                                          src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step2.png')}
                                          alt=""/>
                                     <div>
@@ -462,7 +462,7 @@ export default class WhiteBook extends React.Component {
                                         <div>Symbol：BNB</div>
                                         <div>URL：https://www.bscscan.com/</div>
                                     </div>
-                                    <img className='learn-more-content-desc-step-img' width='846' height='456'
+                                    <img className='learn-more-content-desc-step-img' width='846' height='406'
                                          src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step3.png')}
                                          alt=""/>
                                     <div>Later, you can see that there is an extra option for Binance Smartchain. You
@@ -683,14 +683,14 @@ export default class WhiteBook extends React.Component {
                             700,000,000
                         </div>
                         <img className='mb-small' src={require('../../assets/img/learn-more/What’s-$LKK-1.png')}
-                             width='846' height='456' alt=""/>
+                             width='846' height='280' alt=""/>
                         <img className='mb-small' src={require('../../assets/img/learn-more/What’s-$LKK-2.png')}
-                             width='846' height='456' alt=""/>
+                             width='846' height='506' alt=""/>
                         <div className="learn-more-content-title-level3">Total Supply: Initial 1000,000,000 to
                             Eventual
                         </div>
                         <img className='mb-small' src={require('../../assets/img/learn-more/What’s-$LKK-3.png')}
-                             width='846' height='456' alt=""/>
+                             width='846' height='549' alt=""/>
                         <div className="learn-more-content-title-level2" id='3-0-1'>What’s $BLP</div>
                         <div className='learn-more-content-desc'>
                             <p>
@@ -704,7 +704,7 @@ export default class WhiteBook extends React.Component {
                             </p>
                         </div>
                         <img className='mb-small' src={require('../../assets/img/learn-more/What’s-$BLP-1.png')}
-                             width='846' height='456' alt=""/>
+                             width='846' height='241' alt=""/>
                         <div className='learn-more-content-desc'>
                             <p>
                                 $BLP can only be unlocked and used immediately when players hold enough $BLP equal with
