@@ -68,7 +68,7 @@
   &-content {
     &-title {
       width: 100%;
-      margin-top: 312px;
+      margin-top: 415px;
       margin-bottom: 18px;
       display: flex;
       justify-content: space-between;
@@ -78,6 +78,7 @@
       }
 
       &-play-earn {
+        //margin-top: 255px;
         width: 650px;
       }
     }
@@ -113,15 +114,16 @@
     }
 
     &-pie {
+      padding-right: 80px;
       //margin-top: 103px;
-      height: 586px;
+      //height: 586px;
       display: flex;
       justify-content: flex-end;
       position: relative;
 
       &-img {
-        width: 631px;
-        height: 586px;
+        //width: 631px;
+        height: 475px;
         position: absolute;
         top: -70px;
         left: 0;

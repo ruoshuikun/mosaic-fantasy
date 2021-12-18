@@ -4,10 +4,10 @@ import './index.scss'
 export default class Market extends React.Component {
     render() {
         const piecesSlider = [
-            {
-                url: require('../../assets/img/learn-more/mosaic/test.png'),
-                name: 'test'
-            },
+            // {
+            //     url: require('../../assets/img/learn-more/mosaic/test.png'),
+            //     name: 'test'
+            // },
             {
                 url: require('../../assets/img/learn-more/mosaic/Zeklahm.png'),
                 name: 'Zeklahm'

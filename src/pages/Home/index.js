@@ -71,7 +71,6 @@ export default class Home extends React.Component {
                     </div>
                     <div className='home-content'>
                         <div className='home-content-title'>
-
                             <img className='home-content-title-game-play'
                                  src={require('../../assets/img/home/game-play.png')}
                                  alt=""/>

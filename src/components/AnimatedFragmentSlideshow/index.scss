@@ -1,5 +1,5 @@
-$canvasWidth: 400px;
-$pieces-slider__image: 250px;
+$canvasWidth: 700px;
+$pieces-slider__image: 400px;
 
 .pieces-slider {
   position: relative;
@@ -19,8 +19,8 @@ $pieces-slider__image: 250px;
 
 /* Define image dimensions and also hide them */
 .pieces-slider__image {
-  max-width: $pieces-slider__image;
-  max-height: $pieces-slider__image;
+  width: $pieces-slider__image;
+  height: $pieces-slider__image;
 }
 
 .js .pieces-slider__image {
