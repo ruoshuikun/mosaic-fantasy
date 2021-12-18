@@ -1,23 +1,38 @@
 @import "src/assets/styles/index";
 
-.tree{
-  &-wrap{
+.tree {
+  &-wrap {
     width: 100%;
   }
-  &-title{
+
+  &-title {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
   }
-  &-arrow{
+
+  &-arrow {
     width: 25px;
   }
-  &-active{
+
+  &-active {
     background: white;
     border: 1px solid #D5DCE3;
     position: relative;
     color: #2B65C5;
+  }
+
+  &-icon {
+    display: inline-block;
+    margin: 0 10px;
+    width: 16px;
+    height: 16px;
+
+    &-wrap {
+      display: flex;
+      align-items: center;
+    }
   }
 }

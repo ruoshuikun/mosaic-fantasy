@@ -108,9 +108,18 @@ class Tree extends React.Component {
     loopTree(arr) {
         return arr.map((item, index) => {
             return <div key={index} className='tree-wrap'>
+                {/* style={{textIndent: item.key.length * 13+'px'}}*/}
                 {
-                    <div className="tree-title" id={'menu-' + item.key} style={{textIndent: item.key.length * 13+'px'}}>
-                        <span onClick={() => this.scrollToAnchor(item.key)}>{item.title}</span>
+                    <div className="tree-title" id={'menu-' + item.key}>
+                        <div className='tree-icon-wrap'>
+                            {
+                                item.url
+                                    ? <img className='tree-icon' src={item.url} height='16' alt=""/>
+                                    : <span className='tree-icon'></span>
+                            }
+                            <span onClick={() => this.scrollToAnchor(item.key)}>{item.title}</span>
+                        </div>
+
                         {
                             item.children
                                 ?

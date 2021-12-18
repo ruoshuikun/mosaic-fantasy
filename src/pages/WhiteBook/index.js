@@ -6,7 +6,7 @@ function Mosaic({item, index}) {
     return (
         <div key={index}>
             <div className="learn-more-content-title-level2" id={item.key}>{item.type}</div>
-            <img className='mb-default' src={item.img} alt="" width='154' height='154'/>
+            <img className='mb-small' src={item.img} alt="" width='154' height='154'/>
             <div className="learn-more-content-title-level3">{item.name}</div>
             <div>
                 {
@@ -26,12 +26,12 @@ export default class WhiteBook extends React.Component {
                 {
                     title: 'Welcome to MosaicFantasy',
                     key: '0-0',
-                    type: 'default',
+                    url: require('../../assets/img/learn-more/icon/welcome.png')
                 },
                 {
                     title: 'About MosaicFantasy Platform',
                     key: '1-0',
-                    type: 'default',
+                    url: require('../../assets/img/learn-more/icon/about.png'),
                     children: [
                         {
                             title: 'Blockchain Basis',
@@ -58,6 +58,7 @@ export default class WhiteBook extends React.Component {
                 {
                     title: 'About MosaicFantasy Game',
                     key: '2-0',
+                    url: require('../../assets/img/learn-more/icon/AboutMosaicFantasyGame.png'),
                     children: [
                         {
                             title: 'Entering the game',
@@ -70,6 +71,7 @@ export default class WhiteBook extends React.Component {
                         {
                             title: 'Introduction of Mosaic',
                             key: '2-0-2',
+                            url: require('../../assets/img/learn-more/icon/IntroductionMosaic.png'),
                             children: [
                                 {
                                     title: 'Ocean Mosaic',
@@ -102,6 +104,7 @@ export default class WhiteBook extends React.Component {
                 {
                     title: 'Token Economy',
                     key: '3-0',
+                    url: require('../../assets/img/learn-more/icon/TokenEconomy.png'),
                     children: [
                         {
                             title: 'What’s $LKK',
@@ -120,14 +123,20 @@ export default class WhiteBook extends React.Component {
                 {
                     title: 'Ecological Strategy',
                     key: '4-0',
+                    url: require('../../assets/img/learn-more/icon/EcologicalStrategy.png'),
+
                 },
                 {
                     title: 'Contact Us',
                     key: '5-0',
+                    url: require('../../assets/img/learn-more/icon/ContactUs.png'),
+
                 },
                 {
                     title: 'Audit',
                     key: '6-0',
+                    url: require('../../assets/img/learn-more/icon/Audit.png'),
+
                 }
             ],
             introductionMosaic: [
@@ -295,75 +304,98 @@ export default class WhiteBook extends React.Component {
                     <div className='learn-more-content' id='0-0'>
                         <div className="learn-more-content-title-level1">Welcome to MosaicFantasy</div>
                         <div className='learn-more-content-desc'>
-                            MF (MosaicFantasy) is a massive blockchain game based
-                            on BSC (Binance Smart Chain) which allows the gamers to “Play to earn”. With self-operating
-                            ecological economy, MF creates an independent and sophisticated virtual world in which lives
-                            various fantastic creatures holding superpower-Mosaic. In this amazing world, players are
-                            able to obtain, upgrade and synthetize different kinds of Mosaic by taking part in the
-                            adventure, battles and other ecological contribution. Besides, players can earn relevant
-                            cryptocurrency and MF tokens as well.
-                            MF(MosaicFantasy)will bring spectacular experience for gamers with high quality game making,
-                            grand background and multiple “Play to Earn” methods. With “Play to Earn” leading the new
-                            trend of game industry, MF(MosaicFantasy)shall break the block between the reality and
-                            virtuality and becomes the second space for human working, entertainment and social life in
-                            the future!
+                            <div className='mb-default'>
+                                MF (MosaicFantasy) is a massive blockchain game based on BSC (Binance Smart Chain) which
+                                allows the gamers to “Play to Earn”. With self-operating ecological economy, MF creates
+                                an
+                                independent and sophisticated virtual world in which lives various fantastic creatures
+                                holding superpower-Mosaic. In this amazing world, players are able to obtain, upgrade
+                                and
+                                synthetize different kinds of Mosaic by taking part in the adventure, battles and other
+                                ecological contribution. Besides, players can earn relevant cryptocurrency and MF tokens
+                                as
+                                well.
+                            </div>
+                            <div>
+                                MF（MosaicFantasy）will bring spectacular experience for gamers with high quality game
+                                making, grand background and multiple “Play to Earn” methods. With “Play to Earn”
+                                leading
+                                the new trend of game industry, MF（MosaicFantasy）shall break the block between the
+                                reality
+                                and virtuality and becomes the second space for human working, entertainment and social
+                                life
+                                in the future!
+                            </div>
                         </div>
                     </div>
-                    <div className='learn-more-content'>
+                    <div className='learn-more-content' style={{marginTop: '97px'}}>
                         <div className="learn-more-content-title-level1" id='1-0'>About MosaicFantasy Platform</div>
                         <div>
                             <div className="learn-more-content-title-level2" id='1-0-0'>Blockchain Basis</div>
                             <div>
                                 <div className="learn-more-content-title-level3">DeFi (Decentralized Finance)</div>
-                                <div className='learn-more-content-desc'>DeFi is a system by which financial products
-                                    become available on a public decentralized blockchain network. That makes them open
-                                    to anyone to use, rather than traditional centralized finance like banks or
-                                    brokerages. With a system by which software written on blockchains, DeFi makes it
-                                    possible for buyers, sellers, lenders, and borrowers to interact peer to peer or
-                                    with a strictly software-based middleman rather than a company or institution
-                                    facilitating a transaction and improving the existing financial system.
+                                <div className='learn-more-content-desc'>
+                                    <div>
+                                        DeFi is a system by which financial products become available on a public
+                                        decentralized blockchain network. That makes them open to anyone to use, rather
+                                        than traditional centralized finance like banks or brokerages. With a system by
+                                        which software written on blockchains, DeFi makes it possible for buyers,
+                                        sellers, lenders, and borrowers to interact peer to peer or with a strictly
+                                        software-based middleman rather than a company or institution facilitating a
+                                        transaction and improving the existing financial system.
+                                    </div>
                                 </div>
                             </div>
                             <div>
                                 <div className="learn-more-content-title-level3">NFT (Non-Fungible Token)</div>
-                                <div className='learn-more-content-desc'>NFT (Non-Fungible Token) are cryptographic
-                                    assets on blockchain with unique identification codes and metadata that distinguish
-                                    them from each other. Unlike Fungible Tokens such as BTC and ETH which are identical
-                                    to each other, NFT is unique in its identification and indivisible with minimum unit
-                                    1. Therefore, non-fungible, unique and inalterable characteristics of NFT make it
-                                    become the perfect medium for commercial transactions, especially in digital art and
-                                    games.
+                                <div className='learn-more-content-desc'>
+                                    <div>
+                                        NFT (Non-Fungible Token) are cryptographic assets on blockchain with unique
+                                        identification codes and metadata that distinguish them from each other. Unlike
+                                        Fungible Tokens such as BTC and ETH which are identical to each other, NFT is
+                                        unique in its identification and indivisible with minimum unit 1. Therefore,
+                                        non-fungible, unique and inalterable characteristics of NFT make it become the
+                                        perfect medium for commercial transactions, especially in digital art and games.
+                                    </div>
                                 </div>
                             </div>
                             <div>
                                 <div className="learn-more-content-title-level3">GameFi</div>
-                                <div className='learn-more-content-desc'>GameFi is Game+DeFi, which is a mode of
-                                    integration of Game and Finance, presenting decentralized financial products through
-                                    games. It triggers the new model of “Play to earn” other than “Play to win”. In
-                                    other words, players can not only win equipment or tools in the game, but in turn,
-                                    those equipment or tools are also digital assets measured by NFT which can be traded
-                                    for fiat money and spend in real life. GameFi makes the game both enjoyable and
-                                    profitable for players.
+                                <div className='learn-more-content-desc'>
+                                    <div>
+                                        GameFi is Game+DeFi, which is a mode of integration of Game and Finance,
+                                        presenting decentralized financial products through games. It triggers the new
+                                        model of “Play to Earn” other than “Play to Win”. In other words, players can
+                                        not only win equipment or tools in the game, but in turn, those equipment or
+                                        tools are also digital assets measured by NFT which can be traded for fiat money
+                                        and spend in real life. GameFi makes the game both enjoyable and profitable for
+                                        players.
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className='learn-more-content'>
                         <div className="learn-more-content-title-level2" id='1-0-1'>Wallet Guideline</div>
-                        <div className='learn-more-content-desc'>MosaicFantasy is a project based on BSC chain, so
-                            players need to create a BSC address. At present, there are many wallets on the market that
-                            support BSC chain. Take Token Pocket (TP) and MetaMask for example.
+                        <div className='learn-more-content-desc'>
+                            <div>
+                                MosaicFantasy is a project based on BSC chain, so players need to create a BSC address.
+                                At present, there are many wallets on the market that support BSC chain. Take Token
+                                Pocket (TP) and MetaMask for example.
+                            </div>
                         </div>
                         <div>
                             <div>
-                                <div className="learn-more-content-title-level3">TP wallet tutorial</div>
+                                <div className="learn-more-content-title-level3">TP Wallet Tutorial</div>
                                 <div className='learn-more-content-desc'>
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step1: </span>
                                         <span>Download and install the TP Wallet APP.</span>
                                     </div>
                                     <div>
-                                        Go to the website of TP wallet(https://www.tokenpocket.pro/zh/download/app), and
+                                        Go to the website of TP wallet (URL: <a
+                                        href="https://www.tokenpocket.pro/zh/download/app">https://www.tokenpocket.pro/zh/download/app</a>),
+                                        and
                                         select
                                         the corresponding wallet version according to your device.
                                     </div>
@@ -371,13 +403,13 @@ export default class WhiteBook extends React.Component {
                                          src={require('../../assets/img/learn-more/step1.png')} alt=""/>
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step2: </span>
-                                        <span>With TP Wallet on your smartphone, click to open and create a wallet. As a new beginner without Wallet, please choose "No Wallet" and choose the blockchain network you would like to create. As MF is based on BSC , you need to choose BSC network to “Create Wallet”.</span>
+                                        <span>With TP Wallet on your smartphone, click to open and create a wallet. As a new beginner without Wallet, please choose “No Wallet” and choose the blockchain network you would like to create. As MF is based on BSC , you need to choose BSC network to “Create Wallet”.</span>
                                     </div>
                                     <img className='learn-more-content-desc-step-img' width='846' height='456'
                                          src={require('../../assets/img/learn-more/step2.png')} alt=""/>
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step3: </span>
-                                        <span>Set your BSC wallet name and password, and then tick “Terms of Service and Privacy”, click [Create Wallet] to proceed.</span>
+                                        <span>Set your BSC wallet name and password, and then tick “Terms of Service and Privacy”, click “Create Wallet” to proceed.</span>
                                     </div>
                                     <img className='learn-more-content-desc-step-img' width='846' height='456'
                                          src={require('../../assets/img/learn-more/step3.png')} alt=""/>
@@ -396,7 +428,7 @@ export default class WhiteBook extends React.Component {
                                     <div>Click on the "+" sign in the upper right corner to display the token assets you
                                         want to display through the Token contract search.
                                     </div>
-                                    <b>($LKK:Address)</b>
+                                    <b style={{background: 'red', color: 'white'}}>($LKK: Address)</b>
                                 </div>
                             </div>
                             <div>
@@ -404,19 +436,20 @@ export default class WhiteBook extends React.Component {
                                 <div className='learn-more-content-desc'>
                                     <p>
                                         MetaMask is a plug-in type Ethereum wallet that is used on Google Chrome. You
-                                        only need to add the corresponding extension to Google Chrome which is more
+                                        only need to add the correspondi-ng extension to Google Chrome which is more
                                         convenient.
                                     </p>
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step1: </span>
-                                        <span>Download and install MetaMask (URL: https://metamask.io/download.html). After the installation, the fox logo will appear on the upper right corner of the browser. Give a click and hen you can import your wallet or create a new wallet.</span>
+                                        <span>Download and install MetaMask (URL: <a
+                                            href="https://www.tokenpocket.pro/zh/download/app">https://metamask.io/download.html</a>). After the installation, the fox logo will appear on the upper right corner of the browser. Give a click and hen you can import your wallet or create a new wallet.</span>
                                     </div>
                                     <img className='learn-more-content-desc-step-img' width='846' height='456'
                                          src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step1.png')}
                                          alt=""/>
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step2: </span>
-                                        <span>Add the BSC chain As there is no BSC chain listed on MetaMask by default, you need to add it manually. Click on the blockchain network at the top of the MetaMask interface, and then select custom RPC.</span>
+                                        <span>Add the BSC chain<br/> As there is no BSC chain listed on MetaMask by default, you need to add it manually. Click on the blockchain network at the top of the MetaMask interface, and then select custom RPC.</span>
                                     </div>
                                     <img className='learn-more-content-desc-step-img' width='846' height='456'
                                          src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step2.png')}
@@ -433,7 +466,7 @@ export default class WhiteBook extends React.Component {
                                          src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step3.png')}
                                          alt=""/>
                                     <div>Later, you can see that there is an extra option for Binance Smartchain. You
-                                        can import your existing BSC account private key into MetaMask.
+                                        can import your existing BSC account p-rivate key into MetaMask.
                                     </div>
                                 </div>
 
@@ -446,7 +479,7 @@ export default class WhiteBook extends React.Component {
                         <div className='learn-more-content-desc'>
                             <p>
                                 MF(MosaicFantasy) creates a digital creature world
-                                where lives the fantastic creatures Mosaic with superpowers. Each Mosaic has unique
+                                where lives the fantastic creatures Mosaic with superpowers. E-ach Mosaic has unique
                                 characteristics and attributes which decide its role in the battle. Players can not only
                                 collect, train and command Mosaic, but also earn real money from those fantastic
                                 creatures
@@ -469,7 +502,7 @@ export default class WhiteBook extends React.Component {
                                 market. Here follows the specific steps:
                             </p>
                             <p>
-                                Step1: Open official website of Mosaic Fantasy (https://MosaicFantasy.io/) and click
+                                Step1: Open official website of Mosaic Fantasy (URL: <a href="https://MosaicFantasy.io/">https://MosaicFantasy.io/</a>) and click
                                 “Marketplace”.
                             </p>
                             <p>
@@ -502,7 +535,7 @@ export default class WhiteBook extends React.Component {
                             </p>
                             <p>
                                 Step1: Enter the official
-                                website of MosaicFantasy (www.MosaicFantasy.io). Click ”Stake Mining” on the top
+                                website of MosaicFantasy (URL: <a href="https://MosaicFantasy.io">https://MosaicFantasy.io</a>). Click ”Stake Mining” on the top
                                 navigation bar and find the Mosaic NFT mining interface. Click “Stake” to select the
                                 Mosaic NFT for stake.
                             </p>
@@ -549,7 +582,7 @@ export default class WhiteBook extends React.Component {
                             </p>
                             <p>
                                 <b>Step1: </b>
-                                Enter the dnaxcat official website (https://MosaicFantasy.io/).
+                                Enter the dnaxcat official website (URL: <a href="https://MosaicFantasy.io/">https://MosaicFantasy.io/</a>).
                                 Click “My QR code” on the top navigation bar of the homepage and transfer to the
                                 marketplace.
                             </p>
@@ -649,14 +682,14 @@ export default class WhiteBook extends React.Component {
                         <div className="learn-more-content-title-level3">Total Supply: Initial 1000,000,000 to Eventual
                             700,000,000
                         </div>
-                        <img className='mb-default' src={require('../../assets/img/learn-more/What’s-$LKK-1.png')}
+                        <img className='mb-small' src={require('../../assets/img/learn-more/What’s-$LKK-1.png')}
                              width='846' height='456' alt=""/>
-                        <img className='mb-default' src={require('../../assets/img/learn-more/What’s-$LKK-2.png')}
+                        <img className='mb-small' src={require('../../assets/img/learn-more/What’s-$LKK-2.png')}
                              width='846' height='456' alt=""/>
                         <div className="learn-more-content-title-level3">Total Supply: Initial 1000,000,000 to
                             Eventual
                         </div>
-                        <img className='mb-default' src={require('../../assets/img/learn-more/What’s-$LKK-3.png')}
+                        <img className='mb-small' src={require('../../assets/img/learn-more/What’s-$LKK-3.png')}
                              width='846' height='456' alt=""/>
                         <div className="learn-more-content-title-level2" id='3-0-1'>What’s $BLP</div>
                         <div className='learn-more-content-desc'>
@@ -670,7 +703,7 @@ export default class WhiteBook extends React.Component {
                                 as follows:
                             </p>
                         </div>
-                        <img className='mb-default' src={require('../../assets/img/learn-more/What’s-$BLP-1.png')}
+                        <img className='mb-small' src={require('../../assets/img/learn-more/What’s-$BLP-1.png')}
                              width='846' height='456' alt=""/>
                         <div className='learn-more-content-desc'>
                             <p>
@@ -720,6 +753,8 @@ export default class WhiteBook extends React.Component {
                         <div className="learn-more-content-desc">
                             <p>
                                 Manwu has completed the audit of the MosaicFantasy contract.
+                                <br/>
+                                <b style={{background: 'red', color: 'white'}}>（Audition report Address）</b>
                             </p>
                         </div>
                     </div>

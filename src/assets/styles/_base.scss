@@ -37,11 +37,21 @@ button {
 }
 
 // 外边距
+//.ml-default {
+//  margin-left: $marginDefault;
+//}
+
 .ml-default {
+  margin-left: $marginDefault;
+}
+.ml-small {
   margin-left: $marginSmall;
 }
 
 .mb-default {
+  margin-bottom: $marginDefault;
+}
+.mb-small {
   margin-bottom: $marginSmall;
 }
 
