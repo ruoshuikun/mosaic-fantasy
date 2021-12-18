@@ -16,6 +16,7 @@
 
 
   &-wrap {
+    $homeWrapWidth: 100%;
     $homeWrapHeight: 4144px;
     //$homeWrapHeight: calc(100vw * 2.25);
     //position: fixed;
@@ -24,16 +25,16 @@
     right: 0;
     left: 0;
     //z-index: 1;
-    width: 100vw;
+    width: $homeWrapWidth;
     //height: calc(100vw * 2.25);
     //height: $homeWrapHeight;
     background-image: url("../../assets/img/home-background.jpg");
     background-repeat: no-repeat;
     background-position: center top;
-    background-size: 100vw $homeWrapHeight;
+    background-size: $homeWrapWidth $homeWrapHeight;
 
     overflow-y: auto;
-    overflow-x: unset;
+    overflow-x: hidden;
   }
 
   &-role {

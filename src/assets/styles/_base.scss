@@ -14,18 +14,18 @@ code {
   monospace;
 }
 
-.App{
+.App {
   position: relative;
 }
 
-.main{
+.main {
   width: 1200px;
-  height: calc( 100vh - 160px);
+  height: calc(100vh - 160px);
   margin: auto;
   padding: 100px 30px 30px;
 }
 
-button{
+button {
   width: 120px;
   height: 40px;
   background: linear-gradient(90deg, #40D5D9, #7B54EC);
@@ -35,14 +35,40 @@ button{
   color: $white;
   cursor: pointer
 }
+
 // 外边距
-.ml-default{
+.ml-default {
   margin-left: $marginSmall;
 }
-.mb-default{
+
+.mb-default {
   margin-bottom: $marginSmall;
 }
 
-.link{
+.link {
   color: $link;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, .7);
+  //border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  //background: rgba(0, 0, 0, .3);
+  background: $primary;
+  border-radius: 2px;
+}
+
+//::-webkit-scrollbar-thumb:hover {
+//  background: rgba(0, 0, 0, 0.7);
+//}
+
+::-webkit-scrollbar-corner {
+  background: #f6f6f6;
 }
