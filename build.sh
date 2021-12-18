@@ -1,5 +1,5 @@
 git pull &&
 rm -rf ../html/* &&
-npm i &&
-npm run build &&
+pnpm i &&
+pnpm run build &&
 mv build/* ../html/
