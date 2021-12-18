@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     // Get all images and texts, get the `canvas` element, and save slider length
     var sliderCanvas = document.querySelector('.pieces-slider__canvas');
@@ -8,12 +8,14 @@
 
     // Define indexes related variables and functions
     var currentIndex = 0, currentImageIndex, currentTextIndex, currentNumberIndex;
+
     // Update current indexes for image, text and number
     function updateIndexes() {
         currentImageIndex = currentIndex * 3;
         currentTextIndex = currentImageIndex + 1;
         currentNumberIndex = currentImageIndex + 2;
     }
+
     updateIndexes();
     var textIndexes = [];
     var numberIndexes = [];
@@ -26,22 +28,32 @@
     var imageOptions = {
         angle: 45,
         extraSpacing: {extraX: 100, extraY: 200},
-        piecesWidth: function() { return Pieces.random(50, 200); },
-        ty: function() { return Pieces.random(-400, 400); }
+        piecesWidth: function () {
+            return Pieces.random(50, 200);
+        },
+        ty: function () {
+            return Pieces.random(-400, 400);
+        }
     };
 
     // Options for texts
     var textOptions = {
         color: 'white',
         backgroundColor: '#6AE3E2',
-        fontSize: function() { return windowWidth > 720 ? 50 : 30; },
+        fontSize: function () {
+            return windowWidth > 720 ? 50 : 30;
+        },
         padding: '15 20 10 20',
         angle: -45,
         piecesSpacing: 2,
         extraSpacing: {extraX: 0, extraY: 300},
-        piecesWidth: function() { return Pieces.random(50, 200); },
-        ty: function() { return Pieces.random(-200, 200); },
-        translate: function() {
+        piecesWidth: function () {
+            return Pieces.random(50, 200);
+        },
+        ty: function () {
+            return Pieces.random(-200, 200);
+        },
+        translate: function () {
             if (windowWidth > 1120) return {translateX: 80, translateY: 160};
             // if (windowWidth > 720) return {translateX: 0, translateY: 200};
             return {translateX: 0, translateY: 100};
@@ -52,14 +64,20 @@
     var numberOptions = {
         color: 'white',
         backgroundColor: '#6AE3E2',
-        fontSize: function() { return windowWidth > 720 ? 60 : 20; },
-        padding: function() { return windowWidth > 720 ? '70 35 10 38' : '18 25 10 28'; },
+        fontSize: function () {
+            return windowWidth > 720 ? 60 : 20;
+        },
+        padding: function () {
+            return windowWidth > 720 ? '70 35 10 38' : '18 25 10 28';
+        },
         angle: 0,
         piecesSpacing: 2,
         extraSpacing: {extraX: 10, extraY: 10},
         piecesWidth: 35,
-        ty: function() { return Pieces.random(-200, 200); },
-        translate: function() {
+        ty: function () {
+            return Pieces.random(-200, 200);
+        },
+        translate: function () {
             if (windowWidth > 1120) return {translateX: -145, translateY: -185};
             // if (windowWidth > 720) return {translateX: -240, translateY: -180};
             return {translateX: -140, translateY: -100};
@@ -72,7 +90,7 @@
     for (var i = 0; i < slidesLength; i++) {
         // Wait for all images to load before initializing the slider and event listeners
         var slideImage = new Image();
-        slideImage.onload = function() {
+        slideImage.onload = function () {
             if (++imagesReady == slidesLength) {
                 initSlider();
                 initEvents();
@@ -80,12 +98,12 @@
         };
         // Push all elements for each slide with the corresponding options
         items.push({type: 'image', value: imagesEl[i], options: imageOptions});
-        items.push({type: 'text', value: textEl[i].innerText, options: textOptions});
-        items.push({type: 'text', value: i + 1, options: numberOptions});
+        // items.push({type: 'text', value: textEl[i].innerText, options: textOptions});
+        // items.push({type: 'text', value: i + 1, options: numberOptions});
 
         // TODO
-        // items.push({type: 'text', value: '', options: {}});
-        // items.push({type: 'text', value: i + 10, options: {}});
+        items.push({type: 'text', value: '', options: {}});
+        items.push({type: 'text', value: '', options: {}});
         // Save indexes
         textIndexes.push(i * 3 + 1);
         // numberIndexes.push(i * 3 + 2);
@@ -109,7 +127,9 @@
             piecesSpacing: 1,
             fontFamily: ["'Helvetica Neue', sans-serif"],
             animation: {
-                duration: function() { return Pieces.random(1000, 2000); },
+                duration: function () {
+                    return Pieces.random(1000, 2000);
+                },
                 easing: 'easeOutQuint'
             },
             // debug: true
@@ -129,18 +149,23 @@
 
     // Init Event Listeners
     function initEvents() {
-        // Select prev or next slide using buttons
-        document.querySelector('.pieces-slider__button--prev').addEventListener('click', prevItem);
-        document.querySelector('.pieces-slider__button--next').addEventListener('click', nextItem);
+        // 自动切
+        setInterval(() => {
+            nextItem();
+        }, 3 * 1000)
 
-        // Select prev or next slide using arrow keys
-        document.addEventListener('keydown', function (e) {
-            if (e.keyCode == 37) { // left
-                prevItem();
-            } else if (e.keyCode == 39) { // right
-                nextItem();
-            }
-        });
+        // Select prev or next slide using buttons
+        // document.querySelector('.pieces-slider__button--prev').addEventListener('click', prevItem);
+        // document.querySelector('.pieces-slider__button--next').addEventListener('click', nextItem);
+        //
+        // // Select prev or next slide using arrow keys
+        // document.addEventListener('keydown', function (e) {
+        //     if (e.keyCode == 37) { // left
+        //         prevItem();
+        //     } else if (e.keyCode == 39) { // right
+        //         nextItem();
+        //     }
+        // });
 
         // Handle `resize` event
         window.addEventListener('resize', resizeStart);
@@ -149,26 +174,38 @@
     // Show current items: image, text and number
     function showItems() {
         // Show image pieces
-        piecesSlider.showPieces({items: currentImageIndex, ignore: ['tx'], singly: true, update: (anim) => {
-            // Stop the pieces animation at 60%, and run a new indefinitely animation of `ty` for each piece
-            if (anim.progress > 60) {
-                var piece = anim.animatables[0].target;
-                var ty = piece.ty;
-                anime.remove(piece);
-                anime({
-                    targets: piece,
-                    ty: piece.h_ty < 300
-                        ? [{value: ty + 10, duration: 1000}, {value: ty - 10, duration: 2000}, {value: ty, duration: 1000}]
-                        : [{value: ty - 10, duration: 1000}, {value: ty + 10, duration: 2000}, {value: ty, duration: 1000}],
-                    duration: 2000,
-                    easing: 'linear',
-                    loop: true
-                });
+        piecesSlider.showPieces({
+            items: currentImageIndex, ignore: ['tx'], singly: true, update: (anim) => {
+                // Stop the pieces animation at 60%, and run a new indefinitely animation of `ty` for each piece
+                if (anim.progress > 60) {
+                    var piece = anim.animatables[0].target;
+                    var ty = piece.ty;
+                    anime.remove(piece);
+                    anime({
+                        targets: piece,
+                        ty: piece.h_ty < 300
+                            ? [{value: ty + 10, duration: 1000}, {value: ty - 10, duration: 2000}, {
+                                value: ty,
+                                duration: 1000
+                            }]
+                            : [{value: ty - 10, duration: 1000}, {value: ty + 10, duration: 2000}, {
+                                value: ty,
+                                duration: 1000
+                            }],
+                        duration: 2000,
+                        easing: 'linear',
+                        loop: true
+                    });
+                }
             }
-        }});
+        });
         // Show pieces for text and number, using alternate `ty` values
         piecesSlider.showPieces({items: currentTextIndex});
-        piecesSlider.showPieces({items: currentNumberIndex, ty: function(p, i) { return p.s_ty - [-3, 3][i % 2]; }});
+        piecesSlider.showPieces({
+            items: currentNumberIndex, ty: function (p, i) {
+                return p.s_ty - [-3, 3][i % 2];
+            }
+        });
     }
 
     // Hide current items: image, text and number

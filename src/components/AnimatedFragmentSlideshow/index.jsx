@@ -5,6 +5,10 @@ export default class Market extends React.Component {
     render() {
         const testData = [
             {
+                url: require('../../assets/img/learn-more/mosaic/test.png'),
+                name: 'test'
+            },
+            {
                 url: require('../../assets/img/learn-more/mosaic/Zeklahm.png'),
                 name: 'Zeklahm'
             },
@@ -37,8 +41,8 @@ export default class Market extends React.Component {
                                 </div>
                             )
                         }
-                        <button className="pieces-slider__button pieces-slider__button--prev">prev</button>
-                        <button className="pieces-slider__button pieces-slider__button--next">next</button>
+                        {/*<button className="pieces-slider__button pieces-slider__button--prev">prev</button>*/}
+                        {/*<button className="pieces-slider__button pieces-slider__button--next">next</button>*/}
                         <canvas className="pieces-slider__canvas"></canvas>
                     </div>
                 </div>
