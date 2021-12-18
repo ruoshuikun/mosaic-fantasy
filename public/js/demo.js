@@ -53,7 +53,7 @@
         color: 'white',
         backgroundColor: '#6AE3E2',
         fontSize: function() { return windowWidth > 720 ? 60 : 20; },
-        padding: function() { return windowWidth > 720 ? '18 35 10 38' : '18 25 10 28'; },
+        padding: function() { return windowWidth > 720 ? '70 35 10 38' : '18 25 10 28'; },
         angle: 0,
         piecesSpacing: 2,
         extraSpacing: {extraX: 10, extraY: 10},
