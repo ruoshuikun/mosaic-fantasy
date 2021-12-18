@@ -2,11 +2,11 @@ import React from "react";
 import './index.scss'
 import Tree from '../../components/Tree/index.jsx';
 
-function Mosaic({ item, index }) {
+function Mosaic({item, index}) {
     return (
         <div key={index}>
             <div className="learn-more-content-title-level2" id={item.key}>{item.type}</div>
-            <img className='mb-default' src={item.img} alt="" width='154' />
+            <img className='mb-default' src={item.img} alt="" width='154' height='154'/>
             <div className="learn-more-content-title-level3">{item.name}</div>
             <div>
                 {
@@ -195,8 +195,24 @@ export default class WhiteBook extends React.Component {
         }
     }
 
+    // 添加Dom距离顶部的距离
+    addOffsetTop(val) {
+        val.map(item => {
+            const {key, children} = item
+            const contentDom = document.getElementById(key)
+            item.offsetTop = contentDom.offsetTop - 180
+            if (children) {
+                this.addOffsetTop(children)
+            }
+        })
+    }
+
     //在componentDidMount，进行scroll事件的注册，绑定一个函数，让这个函数进行监听处理
     componentDidMount() {
+        // tree-active
+        // 默认加粗第一个
+        document.getElementById(`menu-0-0`).classList.add("tree-active")
+        this.addOffsetTop(this.state.treeData)
         window.addEventListener('scroll', this.windowHandleScroll)
         document.getElementById("learn-more-content").addEventListener('scroll', this.bindHandleScroll)
     }
@@ -217,68 +233,54 @@ export default class WhiteBook extends React.Component {
 
     }
 
-    bindHandleScroll = (event) => {
-        const menuDom = document.getElementById("learn-more-menu");
-        const menuDomChild = menuDom.children
-        var num = menuDom.offsetTop;
-        var a = menuDom.offsetHeight;
-
-        const contentDom = document.getElementById('learn-more-content')
-        let contentDomChild = contentDom.children
-        var scrollTop = contentDom.scrollTop;
-        // console.table({
-        //     scrollTop,
-        //     num
-        // })
-        // console.log('menuDomChild', menuDomChild);
-        // console.log('contentDomChild', contentDomChild);
-        if (scrollTop >= num) {
-            // menuDom.className = "nav fixed";
-            // menuDom.classList.add("aitest")
-            // contentDom.style.paddingTop = a +"px";
-        } else {
-            // menuDom.classList.remove("aitest")
-            // contentDom.style.paddingTop = "";
-        }
-
-        //当导航与相应文档接触的时候自动切换
-        //method1
-        for (var i = 0; i < menuDomChild.length; i++) {
-            console.log('menuDomChild', i);
-            console.log('contentDomChild[i]', contentDomChild[i]);
-            if (scrollTop + a >= contentDomChild[i].offsetTop) {
-                // console.log('???', i);
-
-                // for (var j = 0; j < menuDomChild.length; j++) {
-                //     // menuDom[j].className = "";
-                //     menuDomChild[i].classList.remove("aitest")
-
-                // }
-                // menuDom[i].className = "aitest";
-                menuDomChild[i].classList.add("aitest")
+    // 左侧菜单，根据右侧滑动 加粗相应的菜单
+    treeActive({val, scrollTop}) {
+        val.map((item, index) => {
+            const {key, offsetTop, children} = item
+            if (offsetTop < scrollTop) {
+                const treeActive = document.querySelectorAll('.tree-active')
+                for (let i = 0; i < treeActive.length; i++) {
+                    treeActive[i].classList.remove("tree-active")
+                }
+                const contentDom = document.getElementById(`menu-${key}`)
+                contentDom.classList.add("tree-active")
             }
-        }
-        // console.log('scrollTop',scrollTop);
-        // console.log('navContainer', navContainer);
-        // const target = document.getElementById('target');
-        // console.log('target', target.getBoundingClientRect().top)
-        // const clientRect = target.getBoundingClientRect();
-        // // console.log(clientRect);
-        // // 滚动的高度
-        // const scrollTop = (event.srcElement ? event.srcElement.documentElement.scrollTop : false)
-        //     || window.pageYOffset
-        //     || (event.srcElement ? event.srcElement.body.scrollTop : 0);
-        // // console.info('event', event)
-        // // console.info('scrollTop', scrollTop)
-        // this.isInViewPort(event)
-        // this.setState({
-        //     hasVerticalScrolled: scrollTop > 10
+            if (children) {
+                this.treeActive({val: children, scrollTop})
+            }
+        })
+    }
+
+    bindHandleScroll = (event) => {
+        // 获取内容dom
+        const contentDom = document.getElementById('learn-more-content')
+        const scrollTop = contentDom.scrollTop;
+
+        this.treeActive({val: this.state.treeData, scrollTop})
+        // this.state.treeData.map((item, index) => {
+        //     const {offsetTop, key} = item
+        //     // console.log('offsetTop', offsetTop)
+        //     // 默认160 是第一个的offsetTop
+        //     let before = 0, after = 160
+        //     if (index > 0 && index < [this.state.treeData.length - 1]) {
+        //         before = this.state.treeData[index - 1].offsetTop
+        //         after = this.state.treeData[index + 1].offsetTop
+        //         console.table({before, scrollTop, after})
+        //     }
+        //     if (offsetTop < scrollTop && before < scrollTop < after) {
+        //         const treeActive = document.querySelectorAll('.tree-active')
+        //         for (let i = 0; i < treeActive.length; i++) {
+        //             treeActive[i].classList.remove("tree-active")
+        //         }
+        //         const contentDom = document.getElementById(`menu-${key}`)
+        //         contentDom.classList.add("tree-active")
+        //     }
         // })
     }
 
     render() {
         const tree = this.state.treeData
-        const { introductionMosaic } = this.state
+        const {introductionMosaic} = this.state
 
         return (
             <div className='learn-more'>
@@ -365,32 +367,32 @@ export default class WhiteBook extends React.Component {
                                         select
                                         the corresponding wallet version according to your device.
                                     </div>
-                                    <img className='learn-more-content-desc-step-img' width='846'
-                                        src={require('../../assets/img/learn-more/step1.png')} alt="" />
+                                    <img className='learn-more-content-desc-step-img' width='846' height='456'
+                                         src={require('../../assets/img/learn-more/step1.png')} alt=""/>
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step2: </span>
                                         <span>With TP Wallet on your smartphone, click to open and create a wallet. As a new beginner without Wallet, please choose "No Wallet" and choose the blockchain network you would like to create. As MF is based on BSC , you need to choose BSC network to “Create Wallet”.</span>
                                     </div>
-                                    <img className='learn-more-content-desc-step-img' width='846'
-                                        src={require('../../assets/img/learn-more/step2.png')} alt="" />
+                                    <img className='learn-more-content-desc-step-img' width='846' height='456'
+                                         src={require('../../assets/img/learn-more/step2.png')} alt=""/>
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step3: </span>
                                         <span>Set your BSC wallet name and password, and then tick “Terms of Service and Privacy”, click [Create Wallet] to proceed.</span>
                                     </div>
-                                    <img className='learn-more-content-desc-step-img' width='846'
-                                        src={require('../../assets/img/learn-more/step3.png')} alt="" />
+                                    <img className='learn-more-content-desc-step-img' width='846' height='456'
+                                         src={require('../../assets/img/learn-more/step3.png')} alt=""/>
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step4: </span>
                                         <span>Backup Mnemonic. In addition to the password, the mnemonic phrase is an important tool for restoring the wallet and must be backed up. Please do not take screenshots to keep your assets saft and then click “I get it”. Backup your mnemonic and keep it in a safe place, read [Attention] carefully, click “Completed Backup, Verify it”.</span>
                                     </div>
-                                    <img className='learn-more-content-desc-step-img' width='846'
-                                        src={require('../../assets/img/learn-more/step4.png')} alt="" />
+                                    <img className='learn-more-content-desc-step-img' width='846' height='456'
+                                         src={require('../../assets/img/learn-more/step4.png')} alt=""/>
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step5: </span>
                                         <span>Fill in mnemonic words in order according to the words you copied, and then click “Confirm”. And you will you've created a wallet with BSC address successfully!</span>
                                     </div>
-                                    <img className='learn-more-content-desc-step-img' width='846'
-                                        src={require('../../assets/img/learn-more/step5.png')} alt="" />
+                                    <img className='learn-more-content-desc-step-img' width='846' height='456'
+                                         src={require('../../assets/img/learn-more/step5.png')} alt=""/>
                                     <div>Click on the "+" sign in the upper right corner to display the token assets you
                                         want to display through the Token contract search.
                                     </div>
@@ -409,16 +411,16 @@ export default class WhiteBook extends React.Component {
                                         <span className='learn-more-content-desc-step'>Step1: </span>
                                         <span>Download and install MetaMask (URL: https://metamask.io/download.html). After the installation, the fox logo will appear on the upper right corner of the browser. Give a click and hen you can import your wallet or create a new wallet.</span>
                                     </div>
-                                    <img className='learn-more-content-desc-step-img' width='846'
-                                        src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step1.png')}
-                                        alt="" />
+                                    <img className='learn-more-content-desc-step-img' width='846' height='456'
+                                         src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step1.png')}
+                                         alt=""/>
                                     <div>
                                         <span className='learn-more-content-desc-step'>Step2: </span>
                                         <span>Add the BSC chain As there is no BSC chain listed on MetaMask by default, you need to add it manually. Click on the blockchain network at the top of the MetaMask interface, and then select custom RPC.</span>
                                     </div>
-                                    <img className='learn-more-content-desc-step-img' width='846'
-                                        src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step2.png')}
-                                        alt="" />
+                                    <img className='learn-more-content-desc-step-img' width='846' height='456'
+                                         src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step2.png')}
+                                         alt=""/>
                                     <div>
                                         <div>Fill in the following information one by one, and click save:</div>
                                         <div>Network：Binance Smartchain</div>
@@ -427,9 +429,9 @@ export default class WhiteBook extends React.Component {
                                         <div>Symbol：BNB</div>
                                         <div>URL：https://www.bscscan.com/</div>
                                     </div>
-                                    <img className='learn-more-content-desc-step-img' width='846'
-                                        src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step3.png')}
-                                        alt="" />
+                                    <img className='learn-more-content-desc-step-img' width='846' height='456'
+                                         src={require('../../assets/img/learn-more/meta-mask-wallet-tutorial-step3.png')}
+                                         alt=""/>
                                     <div>Later, you can see that there is an extra option for Binance Smartchain. You
                                         can import your existing BSC account private key into MetaMask.
                                     </div>
@@ -617,7 +619,7 @@ export default class WhiteBook extends React.Component {
                                 element attribute for example.
                             </p>
                             {
-                                introductionMosaic.map((item, index) => Mosaic({ item, index }))
+                                introductionMosaic.map((item, index) => Mosaic({item, index}))
                             }
                         </div>
                         <div className="learn-more-content-title-level2" id='2-0-3'>Gameplay</div>
@@ -648,14 +650,14 @@ export default class WhiteBook extends React.Component {
                             700,000,000
                         </div>
                         <img className='mb-default' src={require('../../assets/img/learn-more/What’s-$LKK-1.png')}
-                            width='846' alt="" />
+                             width='846' height='456' alt=""/>
                         <img className='mb-default' src={require('../../assets/img/learn-more/What’s-$LKK-2.png')}
-                            width='846' alt="" />
+                             width='846' height='456' alt=""/>
                         <div className="learn-more-content-title-level3">Total Supply: Initial 1000,000,000 to
                             Eventual
                         </div>
                         <img className='mb-default' src={require('../../assets/img/learn-more/What’s-$LKK-3.png')}
-                            width='846' alt="" />
+                             width='846' height='456' alt=""/>
                         <div className="learn-more-content-title-level2" id='3-0-1'>What’s $BLP</div>
                         <div className='learn-more-content-desc'>
                             <p>
@@ -669,7 +671,7 @@ export default class WhiteBook extends React.Component {
                             </p>
                         </div>
                         <img className='mb-default' src={require('../../assets/img/learn-more/What’s-$BLP-1.png')}
-                            width='846' alt="" />
+                             width='846' height='456' alt=""/>
                         <div className='learn-more-content-desc'>
                             <p>
                                 $BLP can only be unlocked and used immediately when players hold enough $BLP equal with

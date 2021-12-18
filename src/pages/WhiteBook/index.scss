@@ -3,18 +3,19 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  height: 100%;
+  padding-top: 60px;
+  height: calc(100% - 60px);
 
   &-menu {
     width: 280px;
     height: 100%;
     //display: flex;
     background: $gray;
-    padding: 10px;
+    //padding: 10px;
     font-size: 14px;
     line-height: 30px;
     overflow-y: auto;
-    overflow-x: unset;
+    overflow-x: hidden;
   }
 
   &-content {
@@ -90,7 +91,7 @@
   overflow-x: unset;
 }
 
-.aitest{
+.active{
   font-weight: bold;
   color: red;
 }

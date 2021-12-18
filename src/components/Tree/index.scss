@@ -15,7 +15,9 @@
     width: 25px;
   }
   &-active{
-    color: $black !important;
-    font-weight: bold;
+    background: white;
+    border: 1px solid #D5DCE3;
+    position: relative;
+    color: #2B65C5;
   }
 }

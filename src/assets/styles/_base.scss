@@ -45,6 +45,11 @@ button {
   margin-bottom: $marginSmall;
 }
 
+// 内边距
+.pl-default {
+  padding-left: $marginSmall;
+}
+
 .link {
   color: $link;
 }

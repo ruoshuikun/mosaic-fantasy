@@ -99,7 +99,7 @@ class Tree extends React.Component {
             let anchorElement = document.getElementById(anchorName);
             // 如果对应id的锚点存在，就跳转到锚点
             // scrollIntoView让页面滚动到对应可视化区域内
-            if(anchorElement) {
+            if (anchorElement) {
                 anchorElement.scrollIntoView({block: 'start', behavior: 'smooth'});
             }
         }
@@ -109,7 +109,7 @@ class Tree extends React.Component {
         return arr.map((item, index) => {
             return <div key={index} className='tree-wrap'>
                 {
-                    <div className="tree-title">
+                    <div className="tree-title" id={'menu-' + item.key} style={{textIndent: item.key.length * 13+'px'}}>
                         <span onClick={() => this.scrollToAnchor(item.key)}>{item.title}</span>
                         {
                             item.children
@@ -126,7 +126,7 @@ class Tree extends React.Component {
                 {
                     item.children && item.children.length && item.isOpenChild ?
                         <div className={item.isOpenChild ? "cm-display-block " : "cm-display-none"}>
-                            <div className="ml-default">{this.loopTree(item.children)}</div>
+                            <div>{this.loopTree(item.children)}</div>
                         </div> : null
                 }
             </div>
@@ -151,7 +151,7 @@ class Tree extends React.Component {
                 }
                 {
                     item.props.children && item.props.children.length ?
-                        <div className="ml-default">{this.loopChild(item.props.children)}</div> : null
+                        <div className="pl-default">{this.loopChild(item.props.children)}</div> : null
                 }
             </div>
         })

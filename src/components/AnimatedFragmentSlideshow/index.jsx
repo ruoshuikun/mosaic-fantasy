@@ -3,7 +3,7 @@ import './index.scss'
 
 export default class Market extends React.Component {
     render() {
-        const testData = [
+        const piecesSlider = [
             {
                 url: require('../../assets/img/learn-more/mosaic/test.png'),
                 name: 'test'
@@ -34,7 +34,7 @@ export default class Market extends React.Component {
                 <div className="content">
                     <div className="pieces-slider">
                         {
-                            testData.map(item =>
+                            piecesSlider.map(item =>
                                 <div className="pieces-slider__slide" key={item.name}>
                                     <img className="pieces-slider__image" src={item.url} alt=""/>
                                     <h2 className="pieces-slider__text">{item.name}</h2>
