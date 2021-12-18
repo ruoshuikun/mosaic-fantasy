@@ -1,3 +1,6 @@
+$canvasWidth: 400px;
+$pieces-slider__image: 250px;
+
 .pieces-slider {
   position: relative;
   text-align: center;
@@ -16,8 +19,8 @@
 
 /* Define image dimensions and also hide them */
 .pieces-slider__image {
-  max-width: 600px;
-  max-height: 400px;
+  max-width: $pieces-slider__image;
+  max-height: $pieces-slider__image;
 }
 
 .js .pieces-slider__image {
@@ -32,8 +35,8 @@
 /* Canvas with viewport width and height */
 .js .pieces-slider__canvas {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: $canvasWidth;
+  height: $canvasWidth;
   transition: 0.2s opacity;
 }
 
@@ -46,12 +49,12 @@
 /* Navigation buttons */
 .pieces-slider__button {
   position: absolute;
-  left: 0;
+  left: -18px;
   top: 50%;
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 50px;
   margin: -25px 0 0 0;
-  background-color: #5104ab;
+  //background-color: #5104ab;
   color: #fff;
   font-family: inherit;
   font-weight: bold;
@@ -61,12 +64,13 @@
 }
 
 .pieces-slider__button:hover {
-  background: #5f3abf;
+  background: #6AE3E2;
+  transition: color 0.3s linear;
 }
 
 .pieces-slider__button--next {
   left: auto;
-  right: 0;
+  right: -18px;
 }
 
 /* Hide the buttons when no JS */

@@ -1,5 +1,6 @@
 import React from "react";
 import './index.scss'
+import AnimatedFragmentSlideshow from '../../components/AnimatedFragmentSlideshow'
 
 
 export default class Home extends React.Component {
@@ -105,8 +106,9 @@ export default class Home extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <img className='home-content-role-img' src=''
-                                 alt=""/>
+                            <div className='home-content-role-img'>
+                                <AnimatedFragmentSlideshow/>
+                            </div>
                         </div>
                     </div>
                     <div className='home-content'>

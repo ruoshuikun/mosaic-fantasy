@@ -33,7 +33,7 @@
     // Options for texts
     var textOptions = {
         color: 'white',
-        backgroundColor: '#5104ab',
+        backgroundColor: '#6AE3E2',
         fontSize: function() { return windowWidth > 720 ? 50 : 30; },
         padding: '15 20 10 20',
         angle: -45,
@@ -42,8 +42,8 @@
         piecesWidth: function() { return Pieces.random(50, 200); },
         ty: function() { return Pieces.random(-200, 200); },
         translate: function() {
-            if (windowWidth > 1120) return {translateX: 200, translateY: 200};
-            if (windowWidth > 720) return {translateX: 0, translateY: 200};
+            if (windowWidth > 1120) return {translateX: 80, translateY: 160};
+            // if (windowWidth > 720) return {translateX: 0, translateY: 200};
             return {translateX: 0, translateY: 100};
         }
     };
@@ -51,7 +51,7 @@
     // Options for numbers
     var numberOptions = {
         color: 'white',
-        backgroundColor: '#5104ab',
+        backgroundColor: '#6AE3E2',
         fontSize: function() { return windowWidth > 720 ? 60 : 20; },
         padding: function() { return windowWidth > 720 ? '18 35 10 38' : '18 25 10 28'; },
         angle: 0,
@@ -60,8 +60,8 @@
         piecesWidth: 35,
         ty: function() { return Pieces.random(-200, 200); },
         translate: function() {
-            if (windowWidth > 1120) return {translateX: -340, translateY: -180};
-            if (windowWidth > 720) return {translateX: -240, translateY: -180};
+            if (windowWidth > 1120) return {translateX: -145, translateY: -185};
+            // if (windowWidth > 720) return {translateX: -240, translateY: -180};
             return {translateX: -140, translateY: -100};
         }
     };
@@ -130,17 +130,17 @@
     // Init Event Listeners
     function initEvents() {
         // Select prev or next slide using buttons
-        // document.querySelector('.pieces-slider__button--prev').addEventListener('click', prevItem);
-        // document.querySelector('.pieces-slider__button--next').addEventListener('click', nextItem);
-        //
-        // // Select prev or next slide using arrow keys
-        // document.addEventListener('keydown', function (e) {
-        //     if (e.keyCode == 37) { // left
-        //         prevItem();
-        //     } else if (e.keyCode == 39) { // right
-        //         nextItem();
-        //     }
-        // });
+        document.querySelector('.pieces-slider__button--prev').addEventListener('click', prevItem);
+        document.querySelector('.pieces-slider__button--next').addEventListener('click', nextItem);
+
+        // Select prev or next slide using arrow keys
+        document.addEventListener('keydown', function (e) {
+            if (e.keyCode == 37) { // left
+                prevItem();
+            } else if (e.keyCode == 39) { // right
+                nextItem();
+            }
+        });
 
         // Handle `resize` event
         window.addEventListener('resize', resizeStart);
