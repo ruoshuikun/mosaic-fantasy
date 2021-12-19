@@ -1,4 +1,5 @@
 import React from "react";
+import Clipboard from 'clipboard';
 import './index.scss'
 import Tree from '../../components/Tree/index.jsx';
 
@@ -287,12 +288,21 @@ export default class WhiteBook extends React.Component {
         // })
     }
 
+    copyLink() {
+        new Clipboard('.copy-link');
+    }
+
     render() {
         const tree = this.state.treeData
         const {introductionMosaic} = this.state
 
         return (
             <div className='learn-more'>
+                {/*copy link*/}
+                <div className='copy-link' onClick={() => this.copyLink()} data-clipboard-text={window.location}>
+                    <img src={require('../../assets/img/learn-more/icon/copy-link.png')} alt=""/>
+                    <span>copy link</span>
+                </div>
                 <div className='learn-more-menu' id='learn-more-menu'>
                     <Tree
                         treeData={tree}
@@ -502,7 +512,8 @@ export default class WhiteBook extends React.Component {
                                 market. Here follows the specific steps:
                             </p>
                             <p>
-                                Step1: Open official website of Mosaic Fantasy (URL: <a href="https://MosaicFantasy.io/">https://MosaicFantasy.io/</a>) and click
+                                Step1: Open official website of Mosaic Fantasy (URL: <a
+                                href="https://MosaicFantasy.io/">https://MosaicFantasy.io/</a>) and click
                                 “Marketplace”.
                             </p>
                             <p>
@@ -535,7 +546,9 @@ export default class WhiteBook extends React.Component {
                             </p>
                             <p>
                                 Step1: Enter the official
-                                website of MosaicFantasy (URL: <a href="https://MosaicFantasy.io">https://MosaicFantasy.io</a>). Click ”Stake Mining” on the top
+                                website of MosaicFantasy (URL: <a
+                                href="https://MosaicFantasy.io">https://MosaicFantasy.io</a>). Click ”Stake Mining” on
+                                the top
                                 navigation bar and find the Mosaic NFT mining interface. Click “Stake” to select the
                                 Mosaic NFT for stake.
                             </p>
@@ -582,7 +595,8 @@ export default class WhiteBook extends React.Component {
                             </p>
                             <p>
                                 <b>Step1: </b>
-                                Enter the dnaxcat official website (URL: <a href="https://MosaicFantasy.io/">https://MosaicFantasy.io/</a>).
+                                Enter the dnaxcat official website (URL: <a
+                                href="https://MosaicFantasy.io/">https://MosaicFantasy.io/</a>).
                                 Click “My QR code” on the top navigation bar of the homepage and transfer to the
                                 marketplace.
                             </p>

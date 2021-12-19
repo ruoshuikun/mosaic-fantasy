@@ -5,6 +5,7 @@
   align-items: flex-start;
   padding-top: 60px;
   height: calc(100% - 60px);
+  position: relative;
 
   &-menu {
     width: 280px;
@@ -91,11 +92,18 @@
   overflow-x: unset;
 }
 
-.active{
-  font-weight: bold;
-  color: red;
-}
-
 a {
   text-decoration: none
+}
+
+.copy-link{
+  position: absolute;
+  right: -100px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  >img{
+    margin-right: 12px;
+  }
 }
