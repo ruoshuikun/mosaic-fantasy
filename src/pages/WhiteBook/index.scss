@@ -65,14 +65,14 @@
 
     &-desc {
       padding: $marginSmall 0;
-      text-align: justify;
+      //text-align: justify;
       font: {
         size: 16px;
       }
       line-height: 24px;
-      word-wrap: break-word;
-      white-space: normal;
-      word-break: break-all;
+      //word-wrap: break-word;
+      //white-space: normal;
+      //word-break: break-all;
 
       &-step {
         font-weight: bold;
