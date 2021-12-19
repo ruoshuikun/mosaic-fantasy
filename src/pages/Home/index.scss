@@ -17,21 +17,24 @@
 
   &-wrap {
     $homeWrapWidth: 100%;
-    $homeWrapHeight: 4144px;
-    //$homeWrapHeight: calc(100vw * 2.25);
+    $homeWrapHeight: 4320px;
+    //$homeWrapHeight: calc(100% * 2.25);
     //position: fixed;
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     //z-index: 1;
-    width: $homeWrapWidth;
+    //width: $homeWrapWidth;
     //height: calc(100vw * 2.25);
     //height: $homeWrapHeight;
     background-image: url("../../assets/img/home/home-background.png");
     background-repeat: no-repeat;
     background-position: center top;
     background-size: $homeWrapWidth $homeWrapHeight;
+    //background-size: cover;
+
+    object-fit: cover;
 
     overflow-y: auto;
     overflow-x: hidden;

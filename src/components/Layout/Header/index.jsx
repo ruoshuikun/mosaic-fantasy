@@ -44,7 +44,9 @@ class Nav extends React.Component {
         }
     }
 
+
     jump({item, index}) {
+        sessionStorage.setItem('path', item.path)
         // const headerDom = document.getElementById('header')
         // let background = '#000'
         // if (item.path === '/home') {
@@ -60,7 +62,6 @@ class Nav extends React.Component {
     }
 
     render() {
-
         const navData = this.state.navData
         return (
             <nav>
@@ -81,14 +82,40 @@ class Nav extends React.Component {
     }
 }
 
+function changeBackground() {
+    const headerDom = document.getElementById('header')
+    const path = sessionStorage.getItem('path')
+    let background = '#000'
+    if (path === '/home') {
+        background = 'rgba(0, 0, 0, 0.3)'
+        headerDom.style.background = background
+    } else {
+        background = 'rgba(0, 0, 0, 0.3)'
+        // headerDom.style.backgroundImage = 'url("../../../assets/img/header-background.png")'
+        headerDom.style.backgroundImage = `url("${require('../../../assets/img/header-background.png')}")`
+    }
+    // headerDom.style.background = background
+    console.log('headerDom.style', headerDom.style)
+}
 
 export default class Header extends React.Component {
     constructor(props) {
         super(props);
     }
 
-    render() {
 
+
+    componentDidUpdate() {
+        changeBackground()
+    }
+
+    componentWillMount(nextProps,nextState){
+        setTimeout(()=>{
+            changeBackground()
+        })
+    }
+
+    render() {
         return (
             <div className='header' id='header'>
                 <div className='header-main'>
