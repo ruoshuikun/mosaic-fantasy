@@ -2,6 +2,7 @@ import React from "react";
 import './index.scss'
 import AnimatedFragmentSlideshow from '../../components/AnimatedFragmentSlideshow'
 
+const headerDom = document.getElementById('header')
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -12,13 +13,16 @@ export default class Home extends React.Component {
     }
 
     //在componentDidMount，进行scroll事件的注册，绑定一个函数，让这个函数进行监听处理
-    componentDidMount() {
+    componentDidUpdate() {
         // window.addEventListener('scroll', this.bindHandleScroll)
+        // headerDom.style.background = 'rgba(0, 0, 0, 0.3)'
     }
 
     //在componentWillUnmount，进行scroll事件的注销
     componentWillUnmount() {
         // window.removeEventListener('scroll', this.bindHandleScroll);
+        // console.log('componentWillUnmount')
+        // headerDom.style.background = '#000'
     }
 
     bindHandleScroll = (event) => {
@@ -106,7 +110,8 @@ export default class Home extends React.Component {
                                 </div>
                             </div>
                             <div className='home-content-role-img'>
-                                <AnimatedFragmentSlideshow/>
+                                {/*<AnimatedFragmentSlideshow/>*/}
+                                <img src={require('../../assets/img/learn-more/mosaic/Typhon-3.png')} width='500' height='500' alt=""/>
                             </div>
                         </div>
                     </div>

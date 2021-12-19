@@ -45,14 +45,14 @@ class Nav extends React.Component {
     }
 
     jump({item, index}) {
-        const headerDom = document.getElementById('header')
-        let background = '#000'
-        if (item.path === '/home') {
-            background = 'rgba(0, 0, 0, 0.3)'
-        } else {
-            background = '#000'
-        }
-        headerDom.style.background = background
+        // const headerDom = document.getElementById('header')
+        // let background = '#000'
+        // if (item.path === '/home') {
+        //     background = 'rgba(0, 0, 0, 0.3)'
+        // } else {
+        //     background = '#000'
+        // }
+        // headerDom.style.background = background
 
         this.setState({
             isActive: index

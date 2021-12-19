@@ -4,7 +4,8 @@
   width: 100vw;
   height: 100px;
   //background: $black;
-  background: rgba(0, 0, 0, .3);
+  //background: rgba(0, 0, 0, .3);
+  background-image: url("../../../assets/img/header-background.png");
   color: $white;
   position: fixed;
   z-index: 999;
