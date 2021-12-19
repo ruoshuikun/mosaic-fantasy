@@ -262,6 +262,7 @@ export default class WhiteBook extends React.Component {
     }
 
     bindHandleScroll = (event) => {
+        console.log('bindHandleScroll')
         // 获取内容dom
         const contentDom = document.getElementById('learn-more-content')
         const scrollTop = contentDom.scrollTop;
@@ -771,6 +772,8 @@ export default class WhiteBook extends React.Component {
                                 <b style={{background: 'red', color: 'white'}}>（Audition report Address）</b>
                             </p>
                         </div>
+                    </div>
+                    <div className='learn-more-content' style={{height: 'calc(100% - 250px)'}}>
                     </div>
                 </div>
             </div>

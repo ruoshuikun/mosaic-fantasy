@@ -93,6 +93,7 @@ class Tree extends React.Component {
     }
 
     scrollToAnchor = (anchorName) => {
+        console.log('scrollToAnchor')
         //通过id anchorname是传来的id
         if (anchorName) {
             // 找到锚点
