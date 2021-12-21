@@ -124,7 +124,7 @@ export default class Header extends React.Component {
                     </div>
                     <Nav/>
                     <div className='header-main-right'>
-                        <button>My MF</button>
+                        <button>Play Now</button>
                     </div>
                 </div>
             </div>

@@ -160,7 +160,7 @@ export default class WhiteBook extends React.Component {
                     name: 'Sphinx',
                     skill: [
                         'Skill 1 – Wildwind Strike: Strike abruptly, make 145% physical damage and 35% chance of “Silence” for the random 2 Mosaics in the middle or back row lasting for 1 round. The damage will improve 30% when the targets are Wizards.',
-                        'Skill 2 – Storm Body: Improve 20% ATK (Attack) and 10% critical strike',
+                        'Skill 2 – Storm Body: Improve 20% ATK (Attack) and 10% critical strike.',
                         'Skill 3 –Final Trial: Lethal Judgment from the Lord of Wind. Make 260% physical damage to the opponent’s lowest HP Mosaic. If the target’s HP is under 30%, the damage will increase 15%. Once the target is killed, the HP of Sphinx will recover 15%.',
                         'Skill 4 – Wind King Area: When your Sphinx is the first one starting attack, it will add 15% damage in every attack. If not, there only 40% opportunity to add extra 1 attacking target and make 80% damage each time.'
                     ]
@@ -515,10 +515,10 @@ export default class WhiteBook extends React.Component {
                             <p>
                                 Step1: Open official website of Mosaic Fantasy (URL: <a
                                 href="https://MosaicFantasy.io/">https://MosaicFantasy.io/</a>) and click
-                                “Marketplace”.
+                                “Market”.
                             </p>
                             <p>
-                                Step2: Enter the MosaicNFT market and click “Loading” to connect your wallet.
+                                Step2: Enter the MosaicNFT market and click “My Wallet” to connect your wallet.
                             </p>
                             <p>
                                 Step3: Find the MosaicNFT you prefer by flitering and sorting through the interface.
@@ -532,7 +532,7 @@ export default class WhiteBook extends React.Component {
                             </p>
                             <p>
                                 Step6: After buying the MosaicNFT successfully, click
-                                “My Wallet” to check your digital asset details and find your MosaicNFT in “NFT”
+                                “Assets” to check your digital asset details and find your MosaicNFT in “NFT”
                                 section.
                             </p>
                         </div>
@@ -548,13 +548,13 @@ export default class WhiteBook extends React.Component {
                             <p>
                                 Step1: Enter the official
                                 website of MosaicFantasy (URL: <a
-                                href="https://MosaicFantasy.io">https://MosaicFantasy.io</a>). Click ”Stake Mining” on
+                                href="https://MosaicFantasy.io">https://MosaicFantasy.io</a>). Click ”MF Mining” on
                                 the top
                                 navigation bar and find the Mosaic NFT mining interface. Click “Stake” to select the
                                 Mosaic NFT for stake.
                             </p>
                             <p>
-                                Step2: Check the income and harvest
+                                Step2: Check the income and harvest.
                             </p>
                         </div>
                     </div>
@@ -563,7 +563,7 @@ export default class WhiteBook extends React.Component {
                         <div className="learn-more-content-title-level2" id='1-0-4'>What’s mining power?</div>
                         <div className="learn-more-content-title-level3">Introduction of mining power</div>
                         <div className='learn-more-content-desc'>
-                            Consensus mechanism is essential component of Blockchain to establish trust and
+                            Consensus mechanism is an essential component of Blockchain to establish trust and
                             acquire rights in the digital system. Mining Power is one of the important
                             measurements. As the original and most successful encrypted assets, BTC is built on
                             the PoW (Proof of work) which means whoever running computing devices to complete
@@ -591,19 +591,19 @@ export default class WhiteBook extends React.Component {
                         <div className='learn-more-content-desc'>
                             <p>
                                 Players need at least 1 KingKongwill to enter the game and take PVE or PVP adventures
-                                hereafter. Because players has to use KingKongwill to summon the Mosaic. Here are the
+                                hereafter. Because players have to use KingKongwill to summon the Mosaic. Here are the
                                 steps to entering the game.
                             </p>
                             <p>
                                 <b>Step1: </b>
                                 Enter the dnaxcat official website (URL: <a
                                 href="https://MosaicFantasy.io/">https://MosaicFantasy.io/</a>).
-                                Click “My QR code” on the top navigation bar of the homepage and transfer to the
+                                Click “Play Now” on the top navigation bar of the homepage and transfer to the
                                 marketplace.
                             </p>
                             <p>
                                 <b>Step2: </b>
-                                After entering into the Mosaic NFT market, click “Loading” to link to
+                                After entering into the Mosaic NFT market, click “My Wallet” to link to
                                 the wallet.
                             </p>
                             <p>
@@ -624,7 +624,7 @@ export default class WhiteBook extends React.Component {
                             <p>
                                 <b>Step6: </b>
                                 Click KingKongwill in
-                                the "Wallet" of the page to activate your account. Then scan “My QR code” to entering
+                                the "Assets" of the page to activate your account. Then click “Play Now” to entering
                                 the
                                 game.
                             </p>
@@ -640,7 +640,7 @@ export default class WhiteBook extends React.Component {
                             </p>
                             <p>
                                 “How to train your Mosaics?” is an essential
-                                questions in this amazing world. People have different ways of training. And there is no
+                                question in this amazing world. People have different ways of training. And there is no
                                 absolutely perfect training methods. Each way has both pros and cons. However, all these
                                 training methods are ultimately divided into two categories. One is focusing on the
                                 individual capability of the Mosaic and build strong relationship with it. The other is
@@ -689,9 +689,9 @@ export default class WhiteBook extends React.Component {
                         <div className="learn-more-content-title-level2" id='3-0-0'>What’s $LKK</div>
                         <div className='learn-more-content-desc'>
                             <p>
-                                SLKK is the BEP-20 Governance Token for the MosaicFantasy world. The $LKK holders have
+                                $LKK is the BEP-20 Governance Token for the MosaicFantasy world. The $LKK holders have
                                 the right to vote for the key process in the game governance. Players take part in the
-                                PVP arena and Guild battle to win SLKK as a reward.
+                                PVP arena and Guild battle to win $LKK as a reward.
                             </p>
                         </div>
                         <div className="learn-more-content-title-level3">Total Supply: Initial 1000,000,000 to Eventual
@@ -701,8 +701,7 @@ export default class WhiteBook extends React.Component {
                              width='846' height='280' alt=""/>
                         <img className='mb-small' src={require('../../assets/img/learn-more/What’s-$LKK-2.png')}
                              width='846' height='506' alt=""/>
-                        <div className="learn-more-content-title-level3">Total Supply: Initial 1000,000,000 to
-                            Eventual
+                        <div className="learn-more-content-title-level3">Token Release Schedule
                         </div>
                         <img className='mb-small' src={require('../../assets/img/learn-more/What’s-$LKK-3.png')}
                              width='846' height='549' alt=""/>
@@ -744,7 +743,7 @@ export default class WhiteBook extends React.Component {
                         <div className="learn-more-content-title-level1" id='4-0'>Ecological Strategy</div>
                         <div className="learn-more-content-desc">
                             <p>
-                                MF (MosaicFantasy) will be online at January 10th,2020. And the LKK public blockchain
+                                MF (MosaicFantasy) will be online at January 10th,2022. And the LKK public blockchain
                                 will be completed in the summer of 2022 to establish a totally new metaverse ecology of
                                 Web 3.0. $LKK will become the decentralized game Metaverse. By exploring the path
                                 between players and P2E games, LKK make the game much more enjoyable and profitable.
