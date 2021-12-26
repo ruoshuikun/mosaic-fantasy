@@ -101,16 +101,17 @@ function changeBackground() {
 export default class Header extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            modalWallet: false
+        }
     }
-
-
 
     componentDidUpdate() {
         changeBackground()
     }
 
-    componentWillMount(nextProps,nextState){
-        setTimeout(()=>{
+    componentWillMount(nextProps, nextState) {
+        setTimeout(() => {
             changeBackground()
         })
     }
@@ -124,9 +125,43 @@ export default class Header extends React.Component {
                     </div>
                     <Nav/>
                     <div className='header-main-right'>
-                        <button>Play Now</button>
+                        <button className='btn btn-confirm ml-small'>Play Now</button>
+                        <button className='btn btn-cancel ml-small' onClick={() => {
+                            this.setState({modalWallet: true})
+                        }}>
+                            <span>My Wallet</span>
+                        </button>
                     </div>
                 </div>
+                {/* 弹窗 */}
+                {
+                    this.state.modalWallet
+                        ?
+                        <div className='modal-mask-layer'>
+                            <div className='modal-wallet'>
+                                <div className='modal-wallet-header'>
+                                    <span style={{width: '36px'}}/>
+                                    <span>Connect to a wallet</span>
+                                    <img className='modal-close' width='36'
+                                         src={require('../../../assets/img/market/close@2x.png')} alt=""/>
+                                </div>
+                                <div className='modal-wallet-main'>
+                                    <div className='modal-wallet-main-item'>
+                                        <img width='24' src={require('../../../assets/img/market/metamask@2x.png')}
+                                             alt=""/>
+                                        <span>MetaMask</span>
+                                    </div>
+                                    <div className='modal-wallet-main-item'>
+                                        <img width='24' src={require('../../../assets/img/market/tokenpocket@2x.png')}
+                                             alt=""/>
+                                        <span>Tokenpocket</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        : null
+                }
+
             </div>
         )
     }

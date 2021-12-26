@@ -11,7 +11,7 @@
   z-index: 999;
 
   &-main {
-    width: 1200px;
+    width: 1280px;
     height: 100%;
     margin: auto;
     display: flex;
@@ -53,6 +53,7 @@
     &-right {
       flex: 1;
       text-align: right;
+      display: flex;
     }
   }
 }
