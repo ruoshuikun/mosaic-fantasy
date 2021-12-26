@@ -11,10 +11,10 @@
     &-content {
       display: flex;
       flex-direction: column;
-      background: red;
       width: 1200px;
       padding-top: 20px;
       margin: 0 auto;
+      overflow: auto;
 
       .back {
         margin: 20px 0;
@@ -25,9 +25,8 @@
   &-detail {
     display: flex;
     justify-content: space-between;
-    background: plum;
 
-    &-role{
+    &-role {
       width: 298px;
       height: 492px;
     }
@@ -35,11 +34,10 @@
     &-left, &-right {
       width: 298px;
       //height: 100px;
-      background: lemonchiffon;
     }
 
-    &-left{
-      &-code{
+    &-left {
+      &-code {
         font-size: 13px;
         width: calc(100% - 42px);
         height: 30px;
@@ -47,18 +45,98 @@
         border: 1px solid #666666;
         border-radius: 6px;
         padding: 20px;
-        word-wrap:break-word;
+        word-wrap: break-word;
         color: rgba(170, 170, 170, 1)
       }
-      .buy-now{
+
+      .buy-now {
         width: 100%;
+        //margin-bottom: 175px;
+        margin-bottom: 35px;
       }
     }
 
     &-skill {
-      width: 529px;
-      height: 100px;
-      background: white;
+      width: 488px;
+      height: auto;
+      background: linear-gradient(0deg, rgba(17, 17, 17, 0.5), rgba(51, 51, 51, 0.5));
+      border: 1px solid #666666;
+      border-radius: 20px;
+      padding: 30px 20px;
+      color: rgba(170, 170, 170, 1);
+
+      &-item {
+        display: flex;
+        margin-bottom: 30px;
+      }
     }
+
+    &-right {
+      width: 258px;
+      background: linear-gradient(0deg, rgba(17, 17, 17, 0.5), rgba(51, 51, 51, 0.5));
+      border: 1px solid #666666;
+      border-radius: 20px;
+      padding: 30px 20px;
+      color: rgba(170, 170, 170, 1);
+
+      &-header {
+        color: $white;
+        font-weight: $fontWeightSmall;
+        margin-bottom: 40px;
+      }
+
+      &-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #666666;
+      }
+
+      &-user {
+        display: flex;
+        margin: 30px 0;
+
+        > img {
+          margin-right: 5px;
+        }
+
+        &-info {
+          font-size: 14px;
+          display: flex;
+          justify-content: space-between;
+
+          &-path {
+            color: $primary;
+          }
+        }
+
+        &-code {
+          word-wrap: break-word;
+          width: 223px;
+          font-size: 12px;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.modal-buy-now-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: calc(100% - 88px);
+
+  &-hash {
+    font-size: 24px;
+    color: $primary;
+    font-weight: bold;
+    margin: 40px auto 20px;
+  }
+
+  &-price {
+    color: rgba(149, 146, 171, 1);
   }
 }

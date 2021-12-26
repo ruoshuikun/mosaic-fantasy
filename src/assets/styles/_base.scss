@@ -167,6 +167,14 @@ input[type='checkbox']:checked + label::before {
   margin-left: $marginSmall;
 }
 
+.mr-default {
+  margin-right: $marginDefault;
+}
+
+.mr-small {
+  margin-right: $marginSmall;
+}
+
 .mb-default {
   margin-bottom: $marginDefault;
 }

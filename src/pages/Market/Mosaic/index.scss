@@ -137,7 +137,9 @@
     flex-direction: column;
     align-items: center;
 
-    $width: 1340px;
+    //$width: 1340px;
+    //$width: 100%;
+    $width: 95%;
 
     &-number {
       width: 100%;
@@ -187,9 +189,10 @@
     &-main {
       width: $width;
       //height: calc(100% - 60px);
+      height: calc(100% - 88px);
       display: flex;
       flex-wrap: wrap;
-      //overflow-y: auto;
+      overflow-y: auto;
 
       &-item {
         width: 222px;
@@ -198,8 +201,9 @@
         background-repeat: no-repeat;
         background-position: center top;
         background-size: 222px 369px;
-        margin-right: 57px;
-        margin-bottom: 40px;
+        //margin-right: 57px;
+        margin: 0 1% 40px;
+        //margin-bottom: 40px;
 
         &:nth-child(5n) {
           margin-right: 0;
