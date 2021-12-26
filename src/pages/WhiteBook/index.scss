@@ -1,11 +1,19 @@
 @import "src/assets/styles/variables";
+
 .learn-more {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding-top: 60px;
+
   height: calc(100% - 60px);
   position: relative;
+
+  &-wrap {
+    width: 1200px;
+    height: calc(100vh - 160px);
+    margin: auto;
+  }
 
   &-menu {
     width: 280px;
@@ -86,7 +94,7 @@
   }
 }
 
-#learn-more-content{
+#learn-more-content {
   height: 100%;
   overflow-y: auto;
   overflow-x: unset;
@@ -96,14 +104,15 @@ a {
   text-decoration: none
 }
 
-.copy-link{
+.copy-link {
   position: absolute;
   right: -100px;
   display: flex;
   align-items: center;
   cursor: pointer;
+  font-size: $fontSizeMedium;
 
-  >img{
+  > img {
     margin-right: 12px;
   }
 }

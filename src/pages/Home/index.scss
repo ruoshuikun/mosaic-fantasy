@@ -103,6 +103,7 @@
       &-desc {
         width: 500px;
         color: $gray-2;
+        font-size: $fontSizeMedium;
       }
 
       &-img {
@@ -142,6 +143,7 @@
     justify-content: center;
     align-items: center;
     color: $white;
+    font-size: $fontSizeSmall;
 
     &-img {
       margin-bottom: 32px;
