@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'normalize.css'
 import {Provider} from 'react-redux'
+// import './utils/rem'
+import 'lib-flexible';
 import store from './store'
 
 import './assets/styles/index.scss';
 import App from './App';
-import './utils/rem'
 
 ReactDOM.render(
     <Provider store={store}>
