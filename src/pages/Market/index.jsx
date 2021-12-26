@@ -77,8 +77,12 @@ export default class Market extends React.Component {
             <div className='market-wrap'>
                 <div className='market'>
                     <div className='market-header'>
-                        <button className='btn btn-confirm'>Mosaic</button>
-                        <button className='btn btn-cancel ml-small'>
+                        <button className='btn btn-confirm' onClick={()=>{
+                            this.props.history.push('/market/mosaic')
+                        }}>Mosaic</button>
+                        <button className='btn btn-cancel ml-small' onClick={()=>{
+                            this.props.history.push('/market/king-kong-will')
+                        }}>
                             <span>KingKongWill</span>
                         </button>
                     </div>

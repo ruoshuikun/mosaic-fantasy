@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Market from './pages/Market'
 import MarketMosaic from './pages/Market/Mosaic'
 import MarketDetail from './pages/Market/Detail/detail'
+import MarketKingKongWill from './pages/Market/KingKongWill'
 import WhiteBook from './pages/WhiteBook'
 import Assets from './pages/Assets'
 
@@ -18,6 +19,7 @@ function App() {
                     <Route path="/market" component={Market}/>
                     <Route path="/market/mosaic" component={MarketMosaic}/>
                     <Route path="/market/detail" component={MarketDetail}/>
+                    <Route path="/market/king-kong-will" component={MarketKingKongWill}/>
                     <Route path="/white-book" component={WhiteBook}/>
                     <Route path="/assets" component={Assets}/>
                 </div>
