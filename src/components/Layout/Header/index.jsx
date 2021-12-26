@@ -49,6 +49,7 @@ class Nav extends React.Component {
 
     jump({item, index}) {
         sessionStorage.setItem('path', item.path)
+        changeBackground()
         // const headerDom = document.getElementById('header')
         // let background = '#000'
         // if (item.path === '/home') {
@@ -91,6 +92,14 @@ function changeBackground() {
     if (path === '/home') {
         background = 'rgba(0, 0, 0, 0.3)'
         headerDom.style.background = background
+    } else if (path.includes('/market')) {
+        background = 'rgba(0, 0, 0, 0)'
+        const rootDom = document.getElementById('root')
+        rootDom.style.background = background
+        rootDom.style.backgroundImage = `url("${require('../../../assets/img/market/market-back.jpg')}")`
+        rootDom.style.backgroundRepeat = 'no-repeat'
+        rootDom.style.backgroundPosition = 'center top'
+        rootDom.style.backgroundSize = '100vw 100vh'
     } else {
         background = 'rgba(0, 0, 0, 0.3)'
         // headerDom.style.backgroundImage = 'url("../../../assets/img/header-background.png")'

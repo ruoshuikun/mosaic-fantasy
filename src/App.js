@@ -1,7 +1,9 @@
-import {HashRouter as Router, Route, Link} from 'react-router-dom'
+import {HashRouter as Router, Route, Redirect} from 'react-router-dom'
 import Header from './components/Layout/Header'
 import Home from './pages/Home'
 import Market from './pages/Market'
+import MarketMosaic from './pages/Market/Mosaic'
+import MarketDetail from './pages/Market/Detail/detail'
 import WhiteBook from './pages/WhiteBook'
 import Assets from './pages/Assets'
 
@@ -11,8 +13,11 @@ function App() {
             <div className="App">
                 <Header/>
                 <div className='main'>
+                    <Redirect path="/" to="/home" />
                     <Route path="/home" component={Home}/>
                     <Route path="/market" component={Market}/>
+                    <Route path="/market/mosaic" component={MarketMosaic}/>
+                    <Route path="/market/detail" component={MarketDetail}/>
                     <Route path="/white-book" component={WhiteBook}/>
                     <Route path="/assets" component={Assets}/>
                 </div>

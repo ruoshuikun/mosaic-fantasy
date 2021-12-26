@@ -1,0 +1,64 @@
+@import "src/assets/styles/variables";
+
+.market {
+  font-size: $fontSizeSmall;
+
+
+  &-main {
+    //display: flex;
+    height: calc(100vh - 181px);
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      background: red;
+      width: 1200px;
+      padding-top: 20px;
+      margin: 0 auto;
+
+      .back {
+        margin: 20px 0;
+      }
+    }
+  }
+
+  &-detail {
+    display: flex;
+    justify-content: space-between;
+    background: plum;
+
+    &-role{
+      width: 298px;
+      height: 492px;
+    }
+
+    &-left, &-right {
+      width: 298px;
+      //height: 100px;
+      background: lemonchiffon;
+    }
+
+    &-left{
+      &-code{
+        font-size: 13px;
+        width: calc(100% - 42px);
+        height: 30px;
+        background: linear-gradient(0deg, #111111, #333333);
+        border: 1px solid #666666;
+        border-radius: 6px;
+        padding: 20px;
+        word-wrap:break-word;
+        color: rgba(170, 170, 170, 1)
+      }
+      .buy-now{
+        width: 100%;
+      }
+    }
+
+    &-skill {
+      width: 529px;
+      height: 100px;
+      background: white;
+    }
+  }
+}
