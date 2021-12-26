@@ -1,5 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom'
+import {connect} from "react-redux"  //connect是一个高阶函数，用于包装一个组件，返回一个新的组件
+import {userDispatch as mapDispatchToProps} from "../../../store/actions/index"
 import './index.scss'
 
 class Nav extends React.Component {
@@ -95,15 +97,12 @@ function changeBackground() {
         headerDom.style.backgroundImage = `url("${require('../../../assets/img/header-background.png')}")`
     }
     // headerDom.style.background = background
-    console.log('headerDom.style', headerDom.style)
+    // console.log('headerDom.style', headerDom.style)
 }
 
-export default class Header extends React.Component {
+class Header extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            modalWallet: false
-        }
     }
 
     componentDidUpdate() {
@@ -127,7 +126,7 @@ export default class Header extends React.Component {
                     <div className='header-main-right'>
                         <button className='btn btn-confirm ml-small'>Play Now</button>
                         <button className='btn btn-cancel ml-small' onClick={() => {
-                            this.setState({modalWallet: true})
+                            this.props.getUserStatus(!this.props.modalWallet)
                         }}>
                             <span>My Wallet</span>
                         </button>
@@ -135,23 +134,34 @@ export default class Header extends React.Component {
                 </div>
                 {/* 弹窗 */}
                 {
-                    this.state.modalWallet
+                    this.props.modalWallet
                         ?
                         <div className='modal-mask-layer'>
                             <div className='modal-wallet'>
                                 <div className='modal-wallet-header'>
                                     <span style={{width: '36px'}}/>
                                     <span>Connect to a wallet</span>
-                                    <img className='modal-close' width='36'
-                                         src={require('../../../assets/img/market/close@2x.png')} alt=""/>
+                                    <img
+                                        className='modal-close'
+                                        width='36'
+                                        src={require('../../../assets/img/market/close@2x.png')}
+                                        alt=""
+                                        onClick={() => {
+                                            this.props.getUserStatus(!this.props.modalWallet)
+                                        }}
+                                    />
                                 </div>
                                 <div className='modal-wallet-main'>
-                                    <div className='modal-wallet-main-item'>
+                                    <div className='modal-wallet-main-item' onClick={() => {
+                                        this.props.getUserStatus(!this.props.modalWallet)
+                                    }}>
                                         <img width='24' src={require('../../../assets/img/market/metamask@2x.png')}
                                              alt=""/>
                                         <span>MetaMask</span>
                                     </div>
-                                    <div className='modal-wallet-main-item'>
+                                    <div className='modal-wallet-main-item' onClick={() => {
+                                        this.props.getUserStatus(!this.props.modalWallet)
+                                    }}>
                                         <img width='24' src={require('../../../assets/img/market/tokenpocket@2x.png')}
                                              alt=""/>
                                         <span>Tokenpocket</span>
@@ -166,3 +176,9 @@ export default class Header extends React.Component {
         )
     }
 }
+
+const mapStateToProps = ({user}) => ({
+    modalWallet: user.modalWallet,
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
