@@ -5,6 +5,7 @@ import Market from './pages/Market'
 import MarketMosaic from './pages/Market/Mosaic'
 import MarketDetail from './pages/Market/Detail/detail'
 import MarketKingKongWill from './pages/Market/KingKongWill'
+import MarketKingKongWillDetail from './pages/Market/KingKongWill/Detail'
 import WhiteBook from './pages/WhiteBook'
 import Assets from './pages/Assets'
 
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/market/mosaic" component={MarketMosaic}/>
                     <Route path="/market/detail" component={MarketDetail}/>
                     <Route path="/market/king-kong-will" component={MarketKingKongWill}/>
+                    <Route path="/market/king-kong-will-detail" component={MarketKingKongWillDetail}/>
                     <Route path="/white-book" component={WhiteBook}/>
                     <Route path="/assets" component={Assets}/>
                 </div>
