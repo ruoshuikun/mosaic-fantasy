@@ -1,0 +1,41 @@
+@import "src/assets/styles/index";
+
+.community-detail {
+  width: 1000px;
+  margin: auto auto 30px;
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+
+  &-wrap {
+    color: white;
+  }
+
+  &-title {
+    font: {
+      size: 36px;
+      weight: bold;
+    }
+    margin: 22px 0;
+  }
+
+  &-time {
+    display: flex;
+    margin-bottom: 22px;
+  }
+
+  &-game {
+    width: 1000px;
+    height: 400px;
+    background: red;
+    margin: auto;
+
+    &-desc {
+      font: {
+        size: 18px;
+        weight: 400;
+      }
+      line-height: 30px;
+      margin-top: 20px;
+    }
+  }
+}

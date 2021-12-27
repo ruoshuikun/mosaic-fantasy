@@ -84,7 +84,7 @@ function changeBackground() {
     if (path === '/home') {
         background = 'rgba(0, 0, 0, 0.3)'
         headerDom.style.background = background
-    } else if (path.includes('/market')||path.includes('/mining')) {
+    } else if (path.includes('/market')||path.includes('/mining')|| path.includes('/community')) {
         background = 'rgba(0, 0, 0, 0)'
         const rootDom = document.getElementById('root')
         rootDom.style.background = background
