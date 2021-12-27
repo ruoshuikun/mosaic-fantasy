@@ -76,7 +76,7 @@ export default class Market extends React.Component {
         return (
             <div className='market-wrap'>
                 <div className='market'>
-                    <div className='market-header'>
+                    <div className='market-header' id='market-header'>
                         <button className='btn btn-confirm' onClick={()=>{
                             this.props.history.push('/market/mosaic')
                         }}>Mosaic</button>

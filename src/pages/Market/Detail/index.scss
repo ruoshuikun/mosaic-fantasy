@@ -105,9 +105,13 @@
           font-size: 14px;
           display: flex;
           justify-content: space-between;
-
+          margin-bottom: 8px;
           &-path {
             color: $primary;
+          }
+
+          >span{
+            cursor: pointer;
           }
         }
 

@@ -151,8 +151,12 @@ export default class MarketDetail extends React.Component {
                                      alt=""/>
                                 <div>
                                     <div className='market-detail-right-user-info'>
-                                        <span>Buyer</span>
-                                        <span className='market-detail-right-user-info-path'>Homepage</span>
+                                        <span onClick={()=>{
+                                            this.props.history.push('/market/homepage')
+                                        }}>Buyer</span>
+                                        <span className='market-detail-right-user-info-path' onClick={()=>{
+                                            this.props.history.push('/market/homepage')
+                                        }}>Homepage</span>
                                     </div>
                                     <div
                                         className='market-detail-right-user-code'>0x077cb9dF4e5f1D9F734a20a23D4C74D0868327c5

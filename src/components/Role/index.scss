@@ -1,0 +1,76 @@
+@import "src/assets/styles/index";
+
+.role{
+    width: 222px;
+    height: 369px;
+    background-image: url("../../assets/img/market/card-back.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 222px 369px;
+    //margin-right: 57px;
+    margin: 0 10px 40px;
+    //margin-bottom: 40px;
+
+    &:nth-child(5n) {
+      margin-right: 0;
+    }
+
+    &-name {
+      height: 24px;
+      padding: 28px 30px 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $primary;
+      font: {
+        size: 24px;
+        weight: bold;
+      }
+    }
+
+    &-type {
+      width: 24px;
+      height: 24px;
+    }
+
+    &-role {
+      width: 100%;
+      height: 229px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-star {
+      margin: auto;
+      max-width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-price {
+
+      &-wrap {
+        width: 80%;
+        margin: 14px auto 10px;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-dummy {
+        font: {
+          size: $fontSizeMedium;
+          weight: bold;
+        }
+        margin: 0 5px;
+      }
+
+      &-authentic {
+        color: #9592AB;
+        font-size: $fontSizeSmall;
+      }
+    }
+}
