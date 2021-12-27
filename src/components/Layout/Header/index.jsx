@@ -24,24 +24,16 @@ class Nav extends React.Component {
                 },
                 {
                     name: 'MF Mining',
-                    path: '/mf-mining'
+                    path: '/mining'
                 },
                 {
                     name: 'Whitebook',
                     path: '/white-book'
                 },
                 {
-                    name: 'Help',
-                    path: '/help'
+                    name: 'Community',
+                    path: '/community'
                 },
-                {
-                    name: 'My Wallet',
-                    path: '/my-wallet'
-                },
-                // {
-                //     name: 'Learn More',
-                //     path: '/learn-more'
-                // },
             ]
         }
     }
@@ -92,7 +84,7 @@ function changeBackground() {
     if (path === '/home') {
         background = 'rgba(0, 0, 0, 0.3)'
         headerDom.style.background = background
-    } else if (path.includes('/market')) {
+    } else if (path.includes('/market')||path.includes('/mining')) {
         background = 'rgba(0, 0, 0, 0)'
         const rootDom = document.getElementById('root')
         rootDom.style.background = background

@@ -7,6 +7,7 @@ import MarketDetail from './pages/Market/Detail/detail'
 import MarketKingKongWill from './pages/Market/KingKongWill'
 import MarketKingKongWillDetail from './pages/Market/KingKongWill/Detail'
 import Homepage from './pages/Market/Homepage/index'
+import Mining from './pages/Mining'
 import WhiteBook from './pages/WhiteBook'
 import Assets from './pages/Assets'
 
@@ -16,7 +17,7 @@ function App() {
             <div className="App">
                 <Header/>
                 <div className='main'>
-                    <Redirect path="/" to="/home" />
+                    {/*<Redirect path="/" to="/home" />*/}
                     <Route path="/home" component={Home}/>
                     <Route path="/market" component={Market}/>
                     <Route path="/market/mosaic" component={MarketMosaic}/>
@@ -24,6 +25,7 @@ function App() {
                     <Route path="/market/king-kong-will" component={MarketKingKongWill}/>
                     <Route path="/market/king-kong-will-detail" component={MarketKingKongWillDetail}/>
                     <Route path="/market/homepage" component={Homepage}/>
+                    <Route path="/mining" component={Mining}/>
                     <Route path="/white-book" component={WhiteBook}/>
                     <Route path="/assets" component={Assets}/>
                 </div>
